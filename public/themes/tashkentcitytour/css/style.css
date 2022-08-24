@@ -35,7 +35,7 @@
 html,
 body {
 	height: 100%;
-	font-family: "Montserrat Alternates", sans-serif;
+	font-family: "PT Sans", sans-serif;
 	-webkit-font-smoothing: antialiased;
 	font-smoothing: antialiased;
 	background: none;
@@ -50,7 +50,7 @@ h6 {
 	margin: 0;
 	color: #111111;
 	font-weight: 400;
-	font-family: "Montserrat Alternates", sans-serif;
+	font-family: "PT Sans", sans-serif;
 }
 
 h1 {
@@ -80,7 +80,7 @@ h6 {
 p {
 	font-size: 14px;
 	color: #9d9d9d;
-	font-family: "Montserrat Alternates", sans-serif;
+	font-family: "PT Sans", sans-serif;
 	font-weight: 500;
 	line-height: 28px;
 	margin: 0 0 15px 0;
@@ -543,7 +543,7 @@ ol {
 	border: none;
 	float: left;
 	text-align: center;
-	font-family: "Montserrat Alternates", sans-serif;
+	font-family: "PT Sans", sans-serif;
 	font-size: 14px;
 	font-weight: 600;
 	color: #081624;
