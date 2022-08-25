@@ -148,7 +148,9 @@ ol {
 }
 
 .spad {
-	padding-bottom: 15px;
+
+	padding-bottom: 20px;
+
 
 }
 
@@ -614,7 +616,7 @@ ol {
 -----------------------*/
 
 .intro-text {
-    border: 2px solid #db261f;
+
 	padding-left: 50px;
 	padding-top: 58px;
 	padding-bottom: 57px;
