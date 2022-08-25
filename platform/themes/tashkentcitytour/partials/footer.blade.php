@@ -1,14 +1,9 @@
 <footer class="footer-section">
     <div class="container">
         <div class="row">
-
-
-
             <div class="col-lg-4">
-
                 <div class="footer-item">
                     {!! dynamic_sidebar('footer_sidebar_1') !!}
-
                 </div>
             </div>
             <div class="col-lg-4">
@@ -18,7 +13,7 @@
             </div>
             <div class="col-lg-4">
                 <div class="footer-item">
-                    <h5>Contact Info</h5>
+                    <h5>Контактная информация</h5>
                     <ul>
                         <li><img src="{!! Theme::asset()->url('img/placeholder.png') !!}" alt="">1525 Boring Lane,<br />Los Angeles, CA</li>
                         <li><img src="{!! Theme::asset()->url('img/phone.png') !!}" alt="">+1 (603)535-4592</li>

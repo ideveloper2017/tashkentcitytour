@@ -32,9 +32,6 @@
                         </div>
                     @endif
 
-                    <div class="nav-right">
-                        <a href="#" class="primary-btn">Make a Reservation</a>
-                    </div>
                     <nav class="main-menu mobile-menu">
                         {!!
                             Menu::renderMenuLocation('main-menu', [
@@ -42,20 +39,6 @@
                                 'view'    => 'main-menu',
                             ])
                         !!}
-{{--                        <ul>--}}
-{{--                            <li class="active"><a href="./index.html">Home</a></li>--}}
-{{--                            <li><a href="./about-us.html">About</a></li>--}}
-{{--                            <li><a href="rooms.html">Rooms</a></li>--}}
-{{--                            <li><a href="#">Pages</a>--}}
-{{--                                <ul class="drop-menu">--}}
-{{--                                    <li><a href="about-us.html">About Us</a></li>--}}
-{{--                                    <li><a href="rooms.html">Rooms</a></li>--}}
-{{--                                    <li><a href="services.html">Services</a></li>--}}
-{{--                                </ul>--}}
-{{--                            </li>--}}
-{{--                            <li><a href="./blog.html">News</a></li>--}}
-{{--                            <li><a href="./contact.html">Contact</a></li>--}}
-{{--                        </ul>--}}
                     </nav>
                     <div id="mobile-menu-wrap"></div>
                 </div>

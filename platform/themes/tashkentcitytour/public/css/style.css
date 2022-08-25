@@ -493,7 +493,7 @@ ol {
 }
 
 .check-form .room-quantity {
-	width: calc(29% - 16px);
+	width: calc(24% - 16px);
 	float: left;
 	margin-right: 16px;
 	background: #ffffff;
@@ -1664,7 +1664,7 @@ ol {
 
 @media only screen and (min-width: 1500px) and (max-width: 1920px) {
 	.inner-header .main-menu {
-		margin-right: 96px;
+		margin-right: 550px;
 	}
 	.inner-header .main-menu ul li {
 		margin-right: 10px;
