@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="section-title">
-                <h2>Guestbook</h2>
+                <h2>Отзывы</h2>
             </div>
         </div>
         <div class="row">
@@ -11,7 +11,7 @@
                     <div class="ti-time">
                         02 / 02 / 2019
                     </div>
-                    <h4>We loved our stay</h4>
+                    <h4>Нам понравилось наше пребывание</h4>
                     <div class="rating">
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
@@ -36,7 +36,7 @@
                     <div class="ti-time">
                         02 / 02 / 2019
                     </div>
-                    <h4>I will come back again</h4>
+                    <h4>Я вернусь снова</h4>
                     <div class="rating">
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
