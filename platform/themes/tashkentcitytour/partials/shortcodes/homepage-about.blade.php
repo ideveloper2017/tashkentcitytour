@@ -4,7 +4,8 @@
             <div class="col-lg-6">
                 <div class="about-text">
                     <div class="section-title">
-                        <h2>“Customers love our <br />facilities”</h2>
+                        <h2>Клиенты любят наши <br/>
+                            удобства</h2>
                     </div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus libero mauris, bibendum eget
                         sapien ac, ultrices rhoncus ipsum. Donec nec sapien in urna fermentum ornare. Morbi vel
