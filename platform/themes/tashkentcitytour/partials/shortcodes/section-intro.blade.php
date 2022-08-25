@@ -1,11 +1,11 @@
 <section class="intro-section spad">
-    <div class="container">
+
         <div class="row intro-text">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-offset-1 col-sm-8">
                         <div class="page-header">
-                            <h2>Наш аудиогид говорит <strong class="text-uppercase sub-base-color">на 8 языках!</strong></h2>
+                            <h2>Наш аудиогид говорит <strong class="text-uppercase" style="color:red">на 8 языках!</strong></h2>
                         </div>
 
                         <ul class="list-unstyled row text-center">
@@ -48,5 +48,5 @@
                 </div>
             </div>
         </div>
-    </div>
+
 </section>
