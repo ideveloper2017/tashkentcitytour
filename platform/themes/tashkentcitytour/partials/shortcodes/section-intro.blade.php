@@ -1,24 +1,50 @@
 <section class="intro-section spad">
     <div class="container">
         <div class="row intro-text">
-            <div class="col-lg-6">
-                <div class="intro-left">
-                    <div class="section-title">
-                        <span>a memorable holliday</span>
-                        <h2>A great stay in a<br /> lovely hotel.</h2>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-offset-1 col-sm-8">
+                        <div class="page-header">
+                            <h2>Наш аудиогид говорит <strong class="text-uppercase sub-base-color">на 8 языках!</strong></h2>
+                        </div>
+
+                        <ul class="list-unstyled row text-center">
+                            <li class="col-sm-3">
+                                <p>Узбекский</p>
+                                <img src="{!! Theme::asset()->url('img/flag/flag_uz.jpg') !!}" alt="">
+                            </li>
+                            <li class="col-sm-3">
+                                <p>Русский</p>
+                                <img src="{!! Theme::asset()->url('img/flag/flag_ru.jpg') !!}" alt="">
+                            </li>
+                            <li class="col-sm-3">
+                                <p>Английский</p>
+                                <img src="{!! Theme::asset()->url('img/flag/flag_en.jpg')!!}" alt="">
+                            </li>
+                            <li class="col-sm-3">
+                                <p>Немецкий</p>
+                                <img src="{!! Theme::asset()->url('img/flag/flag_ge.jpg')!!}" alt="">
+                            </li>
+                        </ul>
+                        <ul class="list-unstyled row text-center">
+                            <li class="col-sm-3">
+                                <p>Китайский</p>
+                                <img src="{!! Theme::asset()->url('img/flag/flag_cn.jpg')!!}" alt="">
+                            </li>
+                            <li class="col-sm-3">
+                                <p>Французский</p>
+                                <img src="{!! Theme::asset()->url('img/flag/flag_fr.jpg')!!}" alt="">
+                            </li>
+                            <li class="col-sm-3">
+                                <p>Испанский</p>
+                                <img src="{!! Theme::asset()->url('img/flag/flag_sp.jpg') !!}" alt="">
+                            </li>
+                            <li class="col-sm-3">
+                                <p>Японский</p>
+                                <img src="{!! Theme::asset()->url('img/flag/flag_jp.jpg') !!}" alt="">
+                            </li>
+                        </ul>
                     </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
-                        viverra maecenas. Donec in sodales dui, a blandit nunc. Pellentesque id eros venenatis,
-                        sollicitudin neque sodales, vehicula nibh. Nam massa odio, porttitor vitae efficitur non,
-                        ultricies volutpat tellus.</p>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="intro-right">
-                    <p>Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                        dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra.</p>
-                    <a href="#" class="primary-btn">Make a Reservation</a>
                 </div>
             </div>
         </div>
