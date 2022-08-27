@@ -603,8 +603,8 @@ ol {
 }
 
 .check-form button {
-	background: #F9AD81;
-	border: 1px solid #F9AD81;
+	background: #dc000c;
+	border: 1px solid #dc000c;
 	font-size: 18px;
 	color: #ffffff;
 	padding: 43px 27px;
@@ -734,7 +734,7 @@ ol {
 }
 
 .testimonial-item .rating i {
-	color: #ed8a19;
+	color: #dc000c;
 }
 
 .testimonial-item p {
@@ -763,7 +763,7 @@ ol {
 }
 
 .testimonial-item .ti-author .author-text h6 {
-	color: #F9AD81;
+	color: #dc000c;
 	font-weight: 600;
 	line-height: 24px;
 }
@@ -794,7 +794,7 @@ ol {
 }
 
 .video-text a {
-	color: #F9AD81;
+	color: #dc000c;
 	height: 95px;
 	width: 95px;
 	background: #fff;
@@ -865,7 +865,7 @@ ol {
 }
 
 .footer-item h5 {
-	color: #F9AD81;
+	color: #dc000c;
 	font-weight: 500;
 	margin-bottom: 57px;
 }
@@ -918,7 +918,7 @@ ol {
 .footer-item .newslatter-form button {
 	font-size: 14px;
 	color: #ffffff;
-	background: #F9AD81;
+	background: #dc000c;
 	display: inline-block;
 	border: none;
 	position: absolute;
@@ -972,7 +972,7 @@ ol {
 }
 
 .copyright .copyright-text a:hover {
-	color: #F9AD81;
+	color: #dc000c;
 }
 
 .copyright ul {
@@ -986,7 +986,7 @@ ol {
 }
 
 .copyright ul li.active a {
-	color: #F9AD81;
+	color: #dc000c;
 }
 
 .copyright ul li.active a:after {
@@ -1010,7 +1010,7 @@ ol {
 }
 
 .copyright ul li a:hover {
-	color: #F9AD81;
+	color: #dc000c;
 }
 
 .copyright ul li a:hover::after {
@@ -1023,7 +1023,7 @@ ol {
 	bottom: -5px;
 	width: 5px;
 	height: 5px;
-	background: #F9AD81;
+	background: #dc000c;
 	content: "";
 	border-radius: 50%;
 	-webkit-transform: translateX(-2.5px);
@@ -1092,7 +1092,7 @@ ol {
 
 .mc-item .mc-num span {
 	font-size: 60px;
-	color: #F9AD81;
+	color: #dc000c;
 	font-weight: 600;
 	float: left;
 	line-height: 56px;
@@ -1104,7 +1104,7 @@ ol {
 	font-weight: 600;
 	font-size: 60px;
 	line-height: 56px;
-	color: #F9AD81;
+	color: #dc000c;
 }
 
 .mc-item .mc-num.middle-num {
@@ -1188,7 +1188,7 @@ ol {
 
 .callto-section {
 	overflow: hidden;
-	background: #F9AD81;
+	background: #dc000c;
 	padding-top: 55px;
 	padding-bottom: 50px;
 }
@@ -1277,7 +1277,7 @@ ol {
 }
 
 .ri-sliders .owl-dots .owl-dot.active {
-	background: #F9AD81;
+	background: #dc000c;
 }
 
 .ri-sliders .owl-dots .owl-dot:last-child {
@@ -1305,7 +1305,7 @@ ol {
 .services-item .si-pic .service-icon {
 	width: 89px;
 	height: 89px;
-	background: #F9AD81;
+	background: #dc000c;
 	text-align: center;
 	line-height: 89px;
 	border-radius: 50%;
@@ -1394,7 +1394,7 @@ ol {
 	display: inline-block;
 	font-size: 13px;
 	font-weight: 600;
-	color: #F9AD81;
+	color: #dc000c;
 	letter-spacing: 1.2px;
 	text-transform: uppercase;
 }
@@ -1414,7 +1414,7 @@ ol {
 }
 
 .blog-pagination a:hover {
-	color: #F9AD81;
+	color: #dc000c;
 }
 
 .blog-right .blog-search {
@@ -1440,7 +1440,7 @@ ol {
 	position: absolute;
 	right: 0;
 	top: 0;
-	background: #F9AD81;
+	background: #dc000c;
 	border: none;
 	cursor: pointer;
 }
@@ -1604,7 +1604,7 @@ ol {
 
 .contact-form button {
 	color: #ffffff;
-	background: #F9AD81;
+	background: #dc000c;
 	font-size: 16px;
 	letter-spacing: 0.5px;
 	font-weight: 600;
@@ -1899,7 +1899,7 @@ ol {
 	}
 	.slicknav_nav li:hover {
 		border-radius: 0;
-		background: #F9AD81;
+		background: #dc000c;
 		color: #ffffff;
 	}
 	.slicknav_nav li li:hover {

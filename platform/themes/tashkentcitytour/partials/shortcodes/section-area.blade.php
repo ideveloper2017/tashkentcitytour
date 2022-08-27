@@ -1,4 +1,4 @@
-<section class="hero-area set-bg {!! $style !!}" data-setbg="{!! Theme::asset()->url('img/banner01-eb1d759278.jpg')!!}">
+<section class="hero-area set-bg {!! $style !!}" data-setbg="{!! Theme::asset()->url('img/banner01-eb1d759278.png')!!}">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
