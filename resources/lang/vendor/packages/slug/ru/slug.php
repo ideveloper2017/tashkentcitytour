@@ -1,12 +1,13 @@
 <?php
 
 return [
-    'permalink_settings' => 'Permalink',
+    'permalink_settings' => 'Постоянная ссылка',
     'settings' => [
-        'title' => 'Permalink settings',
-        'description' => 'Manage permalink for all modules.',
-        'preview' => 'Preview',
-        'turn_off_automatic_url_translation_into_latin' => 'Turn off automatic URL translation into Latin?',
+        'title' => 'Настройки постоянных ссылок',
+        'description' => 'Управление разрешением для всех модулей.',
+        'preview' => 'Предпросмотр',
+        'turn_off_automatic_url_translation_into_latin' => 'Отключить автоматический перевод URL на латиницу?',
     ],
-    'preview' => 'Preview',
+    'preview' => 'Предварительный просмотр',
+    'prefix_for' => 'Префикс для :name',
 ];

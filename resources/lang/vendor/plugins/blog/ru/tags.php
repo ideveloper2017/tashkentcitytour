@@ -2,20 +2,20 @@
 
 return [
     'form' => [
-        'name' => 'Name',
-        'name_placeholder' => 'Tag\'s name (Maximum 120 characters)',
-        'description' => 'Description',
-        'description_placeholder' => 'Short description for tag (Maximum 400 characters)',
-        'categories' => 'Categories',
+        'name' => 'Название',
+        'name_placeholder' => 'Имя тега (Максимум 120 символов)',
+        'description' => 'Описание',
+        'description_placeholder' => 'Краткое описание для тега (Максимум 400 символов)',
+        'categories' => 'Категории',
     ],
     'notices' => [
-        'no_select' => 'Please select at least one tag to take this action!',
+        'no_select' => 'Пожалуйста, выберите хотя бы один тег, чтобы выполнить это действие!',
     ],
-    'create' => 'Create new tag',
-    'edit' => 'Edit tag',
-    'cannot_delete' => 'Tag could not be deleted',
-    'deleted' => 'Tag deleted',
-    'menu' => 'Tags',
-    'edit_this_tag' => 'Edit this tag',
-    'menu_name' => 'Tags',
+    'create' => 'Создать новый тег',
+    'edit' => 'Редактировать тег',
+    'cannot_delete' => 'Тег не может быть удален',
+    'deleted' => 'Тег удален',
+    'menu' => 'Теги',
+    'edit_this_tag' => 'Редактировать этот тег',
+    'menu_name' => 'Теги',
 ];

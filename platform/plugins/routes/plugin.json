@@ -1,0 +1,9 @@
+{
+    "name": "Routes",
+    "namespace": "Botble\\Routes\\",
+    "provider": "Botble\\Routes\\Providers\\RoutesServiceProvider",
+    "author": "N/A",
+    "url": "N/A",
+    "version": "1.0",
+    "description": "The description for module routes"
+}

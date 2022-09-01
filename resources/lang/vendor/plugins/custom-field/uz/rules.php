@@ -1,20 +1,20 @@
 <?php
 
 return [
+    'category' => 'Turkum',
     'groups' => [
-        'basic' => 'Basic',
-        'other' => 'Other',
+        'basic' => 'Asosiy',
         'blog' => 'Blog',
+        'other' => 'Boshqa',
     ],
-    'logged_in_user' => 'Logged in user',
-    'logged_in_user_has_role' => 'Logged in has role',
-    'page_template' => 'Page template',
-    'page' => 'Page',
-    'model_name' => 'Model name',
-    'model_name_page' => 'Page',
-    'category' => 'Category',
-    'post_with_related_category' => 'Post with related category',
+    'logged_in_user' => 'Tizimga kirgan foydalanuvchi',
+    'logged_in_user_has_role' => 'Tizimga kirgan roli bor',
+    'model_name' => 'Model nomi',
+    'model_name_category' => 'Turkum (blog)',
+    'model_name_page' => 'Sahifa',
     'model_name_post' => 'Post (blog)',
-    'model_name_category' => 'Category (blog)',
-    'post_format' => 'Post format',
+    'page' => 'Sahifa',
+    'page_template' => 'Sahifa shabloni',
+    'post_format' => 'Post formati',
+    'post_with_related_category' => 'Tegishli toifadagi post',
 ];

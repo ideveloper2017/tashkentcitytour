@@ -1,10 +1,10 @@
 <?php
 
 return [
-    'name' => 'Request Logs',
-    'status_code' => 'Status Code',
-    'no_request_error' => 'No request error now!',
-    'widget_request_errors' => 'Request Errors',
-    'count' => 'Count',
-    'delete_all' => 'Delete all records',
+    'count' => 'Hisoblash',
+    'delete_all' => 'Barcha yozuvlarni o\'chiring',
+    'name' => 'So\'rov jurnallari',
+    'no_request_error' => 'Endi so\'rovda xatolik yo\'q!',
+    'status_code' => 'Status kodi',
+    'widget_request_errors' => 'So\'rov xatolari',
 ];

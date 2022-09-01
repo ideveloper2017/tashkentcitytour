@@ -1,24 +1,24 @@
 <?php
 
 return [
-    '401_title' => 'Permission Denied',
-    '401_msg' => '<li>You have not been granted access to the section by the administrator.</li>'."\n"
-        .'	                <li>You may have the wrong account type.</li>'."\n"
-        .'	                <li>You are not authorized to view the requested resource.</li>'."\n"
-        .'	                <li>Your subscription may have expired.</li>',
-    '404_title' => 'Page could not be found',
-    '404_msg' => '<li>The page you requested does not exist.</li>'."\n"
-        .'	                <li>The link you clicked is no longer.</li>'."\n"
-        .'	                <li>The page may have moved to a new location.</li>'."\n"
-        .'	                <li>An error may have occurred.</li>'."\n"
-        .'	                <li>You are not authorized to view the requested resource.</li>',
-    '500_title' => 'Page could not be loaded',
-    '500_msg' => '<li>The page you requested does not exist.</li>'."\n"
-        .'	                <li>The link you clicked is no longer.</li>'."\n"
-        .'	                <li>The page may have moved to a new location.</li>'."\n"
-        .'	                <li>An error may have occurred.</li>'."\n"
-        .'	                <li>You are not authorized to view the requested resource.</li>',
-    'reasons' => 'This may have occurred because of several reasons',
-    'try_again' => 'Please try again in a few minutes, or alternatively return to the homepage by <a href="http://cms.local/admin">clicking here</a>.',
-    'not_found' => 'Not Found',
+    '401_title' => 'В доступе отказано',
+    '401_msg' => '<li>Администратор не предоставил вам доступ к этому разделу.</li>'."\n"
+        .'	                <li>Возможно, у вас неправильный тип учетной записи.</li>'."\n"
+        .'	                <li>Вы не авторизованы для просмотра запрошенного ресурса.</li>'."\n"
+        .'	                <li>Возможно, срок действия вашей подписки истек.</li>',
+    '404_title' => 'Страница не найдена',
+    '404_msg' => '<li>Запрошенная вами страница не существует.</li>'."\n"
+        .'	                <li>Ссылка, по которой вы перешли, больше не существует.</li>'."\n"
+        .'	                <li>Страница могла быть перемещена на новое место.</li>'."\n"
+        .'	                <li>Возможно, произошла ошибка.</li>'."\n"
+        .'	                <li>У вас нет прав для просмотра запрошенного ресурса.</li>',
+    '500_title' => 'Страница не может быть загружена',
+    '500_msg' => '<li>Запрашиваемая вами страница не существует.</li>'."\n"
+        .'	                <li>Ссылка, по которой вы перешли, больше не существует.</li>'."\n"
+        .'	                <li>Страница могла быть перемещена на новое место.</li>'."\n"
+        .'	                <li>Возможно, произошла ошибка.</li>'."\n"
+        .'	                <li>У вас нет прав для просмотра запрошенного ресурса.</li>',
+    'reasons' => 'Это могло произойти по нескольким причинам',
+    'try_again' => 'Повторите попытку через несколько минут или вернитесь на главную страницу, <a href="https://likeastore.ru/">нажмите здесь</a>.',
+    'not_found' => 'не найдено',
 ];

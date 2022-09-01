@@ -1,21 +1,21 @@
 <?php
 
 return [
+    'cannot_delete' => 'Tegni oʻchirib boʻlmadi',
+    'create' => 'Yangi teg yarating',
+    'deleted' => 'Teg o\'chirildi',
+    'edit' => 'Teglarni tahrirlash',
+    'edit_this_tag' => 'Ushbu tegni tahrirlang',
     'form' => [
-        'name' => 'Name',
-        'name_placeholder' => 'Tag\'s name (Maximum 120 characters)',
-        'description' => 'Description',
-        'description_placeholder' => 'Short description for tag (Maximum 400 characters)',
-        'categories' => 'Categories',
+        'categories' => 'Kategoriyalar',
+        'description' => 'Tavsif',
+        'description_placeholder' => 'Teg uchun qisqacha tavsif (maksimal 400 belgi)',
+        'name' => 'Ism',
+        'name_placeholder' => 'Teg nomi (maksimal 120 belgi)',
     ],
+    'menu' => 'Teglar',
+    'menu_name' => 'Teglar',
     'notices' => [
-        'no_select' => 'Please select at least one tag to take this action!',
+        'no_select' => 'Bu amalni bajarish uchun kamida bitta tegni tanlang!',
     ],
-    'create' => 'Create new tag',
-    'edit' => 'Edit tag',
-    'cannot_delete' => 'Tag could not be deleted',
-    'deleted' => 'Tag deleted',
-    'menu' => 'Tags',
-    'edit_this_tag' => 'Edit this tag',
-    'menu_name' => 'Tags',
 ];

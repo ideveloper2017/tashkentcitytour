@@ -1,17 +1,17 @@
 <?php
 
 return [
-    'create_success_message' => 'Created successfully',
-    'update_success_message' => 'Updated successfully',
-    'delete_success_message' => 'Deleted successfully',
-    'success_header' => 'Success!',
-    'error_header' => 'Error!',
-    'no_select' => 'Please select at least one record to perform this action!',
-    'processing_request' => 'We are processing your request.',
-    'error' => 'Error!',
-    'success' => 'Success!',
-    'info' => 'Info!',
+    'create_success_message' => 'Создан успешно',
+    'update_success_message' => 'Успешно обновлено',
+    'delete_success_message' => 'Удалено успешно',
+    'success_header' => 'Успешно!',
+    'error_header' => 'Ошибка!',
+    'no_select' => 'Пожалуйста, выберите хотя бы одну запись для выполнения этого действия!',
+    'processing_request' => 'Мы обрабатываем ваш запрос.',
+    'error' => 'Ошибка!',
+    'success' => 'Успешно!',
+    'info' => 'Инфо!',
     'enum' => [
-        'validate_message' => 'The :attribute value you have entered is invalid.',
+        'validate_message' => 'Введенное вами значение :attribute  является недопустимым.',
     ],
 ];

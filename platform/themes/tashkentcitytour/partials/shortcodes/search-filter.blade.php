@@ -28,11 +28,11 @@
                     </div>
                     <div class="room-quantity">
                         <div class="single-quantity">
-                            <p>ВЗРОСЛЫЕ</p>
+                            <p>ВЗРОСЛЫЕ <br/><small>(13-59 лет)</small> </p>
                             <div class="pro-qty"><input type="text" value="0"></div>
                         </div>
                         <div class="single-quantity">
-                            <p>ДЕТИ</p>
+                            <p>ДЕТИ <br/><small>(6-12 лет)</small></p>
                             <div class="pro-qty"><input type="text" value="0"></div>
                         </div>
                     </div>

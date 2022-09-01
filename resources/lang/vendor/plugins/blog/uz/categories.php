@@ -1,11 +1,11 @@
 <?php
 
 return [
-    'create' => 'Create new category',
-    'edit' => 'Edit category',
-    'menu' => 'Categories',
-    'edit_this_category' => 'Edit this category',
-    'menu_name' => 'Categories',
-    'none' => 'None',
-    'total_posts' => 'Total posts: :total',
+    'create' => 'Yangi turkum yarating',
+    'edit' => 'Kategoriyani tahrirlash',
+    'edit_this_category' => 'Ushbu turkumni tahrirlang',
+    'menu' => 'Kategoriyalar',
+    'menu_name' => 'Kategoriyalar',
+    'none' => 'Yo\'q',
+    'total_posts' => 'Jami xabarlar: :jami',
 ];

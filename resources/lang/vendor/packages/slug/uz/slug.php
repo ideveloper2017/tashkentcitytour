@@ -1,12 +1,13 @@
 <?php
 
 return [
-    'permalink_settings' => 'Permalink',
+    'permalink_settings' => 'Doimiy havola',
+    'prefix_for' => ':name uchun prefiks',
+    'preview' => 'Ko‘rib chiqish',
     'settings' => [
-        'title' => 'Permalink settings',
-        'description' => 'Manage permalink for all modules.',
-        'preview' => 'Preview',
-        'turn_off_automatic_url_translation_into_latin' => 'Turn off automatic URL translation into Latin?',
+        'description' => 'Barcha modullar uchun doimiy havolani boshqaring.',
+        'preview' => 'Ko‘rib chiqish',
+        'title' => 'Doimiy havola sozlamalari',
+        'turn_off_automatic_url_translation_into_latin' => 'Lotin tiliga avtomatik URL tarjimasi oʻchirilsinmi?',
     ],
-    'preview' => 'Preview',
 ];

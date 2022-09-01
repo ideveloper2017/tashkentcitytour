@@ -1,11 +1,11 @@
 <?php
 
 return [
-    'name' => 'Block',
-    'create' => 'New block',
-    'edit' => 'Edit block',
-    'menu' => 'Static Blocks',
-    'static_block_short_code_name' => 'Static Block',
-    'static_block_short_code_description' => 'Add a custom static block',
-    'alias' => 'Alias',
+    'alias' => 'Taxallus',
+    'create' => 'Yangi blok',
+    'edit' => 'Blokni tahrirlash',
+    'menu' => 'Statik bloklar',
+    'name' => 'Bloklash',
+    'static_block_short_code_description' => 'Maxsus statik blok qo\'shing',
+    'static_block_short_code_name' => 'Statik blok',
 ];

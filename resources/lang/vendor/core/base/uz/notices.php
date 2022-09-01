@@ -1,17 +1,17 @@
 <?php
 
 return [
-    'create_success_message' => 'Created successfully',
-    'update_success_message' => 'Updated successfully',
-    'delete_success_message' => 'Deleted successfully',
-    'success_header' => 'Success!',
-    'error_header' => 'Error!',
-    'no_select' => 'Please select at least one record to perform this action!',
-    'processing_request' => 'We are processing your request.',
-    'error' => 'Error!',
-    'success' => 'Success!',
-    'info' => 'Info!',
+    'create_success_message' => 'Muvaffaqiyatli yaratilgan',
+    'delete_success_message' => 'Muvaffaqiyatli oʻchirildi',
     'enum' => [
-        'validate_message' => 'The :attribute value you have entered is invalid.',
+        'validate_message' => 'Siz kiritgan :atribut qiymati yaroqsiz.',
     ],
+    'error' => 'Xato!',
+    'error_header' => 'Xato!',
+    'info' => 'Ma\'lumot!',
+    'no_select' => 'Bu amalni bajarish uchun kamida bitta yozuvni tanlang!',
+    'processing_request' => 'So‘rovingizni ko‘rib chiqmoqdamiz.',
+    'success' => 'Muvaffaqiyat!',
+    'success_header' => 'Muvaffaqiyat!',
+    'update_success_message' => 'Muvaffaqiyatli yangilandi',
 ];

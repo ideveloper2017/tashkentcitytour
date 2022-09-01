@@ -1,33 +1,33 @@
 <?php
 
 return [
-    'cache_management' => 'Cache management',
-    'cache_commands' => 'Clear cache commands',
+    'cache_management' => 'Управление кэшем',
+    'cache_commands' => 'Команды очистки кэша',
     'commands' => [
         'clear_cms_cache' => [
-            'title' => 'Clear all CMS cache',
-            'description' => 'Clear CMS caching: database caching, static blocks... Run this command when you don\'t see the changes after updating data.',
-            'success_msg' => 'Cache cleaned',
+            'title' => 'Очистить весь кэш CMS',
+            'description' => 'Очистить CMS caching: кэширование базы данных, статические блоки... Запустите эту команду, если вы не видите изменений после обновления данных.',
+            'success_msg' => 'Кэш очищен',
         ],
         'refresh_compiled_views' => [
-            'title' => 'Refresh compiled views',
-            'description' => 'Clear compiled views to make views up to date.',
-            'success_msg' => 'Cache view refreshed',
+            'title' => 'Обновить скомпилированные представления',
+            'description' => 'Очистите скомпилированные представления, чтобы обновить представления.',
+            'success_msg' => 'Обновлено представление кэша',
         ],
         'clear_config_cache' => [
-            'title' => 'Clear config cache',
-            'description' => 'You might need to refresh the config caching when you change something on production environment.',
-            'success_msg' => 'Config cache cleaned',
+            'title' => 'Очистить кэш конфигурации',
+            'description' => 'Возможно, вам потребуется обновить кэширование конфигурации, когда вы что-то меняете в рабочей среде.',
+            'success_msg' => 'Кэш конфигурации очищен',
         ],
         'clear_route_cache' => [
-            'title' => 'Clear route cache',
-            'description' => 'Clear cache routing.',
+            'title' => 'Очистить кэш маршрутов',
+            'description' => 'Очистить маршрутизацию кэша.',
             'success_msg' => 'The route cache has been cleaned',
         ],
         'clear_log' => [
-            'title' => 'Clear log',
-            'description' => 'Clear system log files',
-            'success_msg' => 'The system log has been cleaned',
+            'title' => 'Очистить журнал',
+            'description' => 'Очистить файлы системного журнала',
+            'success_msg' => 'Системный журнал был очищен',
         ],
     ],
 ];

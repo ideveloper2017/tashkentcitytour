@@ -1,33 +1,33 @@
 <?php
 
 return [
-    'cache_management' => 'Cache management',
-    'cache_commands' => 'Clear cache commands',
+    'cache_commands' => 'Kesh buyruqlarini tozalash',
+    'cache_management' => 'Keshni boshqarish',
     'commands' => [
         'clear_cms_cache' => [
-            'title' => 'Clear all CMS cache',
-            'description' => 'Clear CMS caching: database caching, static blocks... Run this command when you don\'t see the changes after updating data.',
-            'success_msg' => 'Cache cleaned',
-        ],
-        'refresh_compiled_views' => [
-            'title' => 'Refresh compiled views',
-            'description' => 'Clear compiled views to make views up to date.',
-            'success_msg' => 'Cache view refreshed',
+            'description' => 'CMS keshini tozalash: ma\'lumotlar bazasini keshlash, statik bloklar... Ma\'lumotlarni yangilashdan keyin o\'zgarishlarni ko\'rmasangiz, ushbu buyruqni ishga tushiring.',
+            'success_msg' => 'Kesh tozalandi',
+            'title' => 'Barcha CMS keshini tozalang',
         ],
         'clear_config_cache' => [
-            'title' => 'Clear config cache',
-            'description' => 'You might need to refresh the config caching when you change something on production environment.',
-            'success_msg' => 'Config cache cleaned',
-        ],
-        'clear_route_cache' => [
-            'title' => 'Clear route cache',
-            'description' => 'Clear cache routing.',
-            'success_msg' => 'The route cache has been cleaned',
+            'description' => 'Ishlab chiqarish muhitida biror narsani o\'zgartirganda, konfiguratsiya keshini yangilashingiz kerak bo\'lishi mumkin.',
+            'success_msg' => 'Konfiguratsiya keshi tozalandi',
+            'title' => 'Konfiguratsiya keshini tozalash',
         ],
         'clear_log' => [
-            'title' => 'Clear log',
-            'description' => 'Clear system log files',
-            'success_msg' => 'The system log has been cleaned',
+            'description' => 'Tizim jurnali fayllarini tozalang',
+            'success_msg' => 'Tizim jurnali tozalandi',
+            'title' => 'Jurnalni tozalash',
+        ],
+        'clear_route_cache' => [
+            'description' => 'Keshni marshrutlashni tozalash.',
+            'success_msg' => 'Marshrut keshi tozalandi',
+            'title' => 'Marshrut keshini tozalash',
+        ],
+        'refresh_compiled_views' => [
+            'description' => 'Ko\'rinishlarni yangilash uchun yig\'ilgan ko\'rinishlarni tozalang',
+            'success_msg' => 'Kesh ko\'rinishi yangilandi',
+            'title' => 'Kompilyatsiya qilingan ko\'rinishlarni yangilang',
         ],
     ],
 ];

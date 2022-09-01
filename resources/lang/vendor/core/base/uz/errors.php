@@ -1,24 +1,24 @@
 <?php
 
 return [
-    '401_title' => 'Permission Denied',
-    '401_msg' => '<li>You have not been granted access to the section by the administrator.</li>'."\n"
-        .'	                <li>You may have the wrong account type.</li>'."\n"
-        .'	                <li>You are not authorized to view the requested resource.</li>'."\n"
-        .'	                <li>Your subscription may have expired.</li>',
-    '404_title' => 'Page could not be found',
-    '404_msg' => '<li>The page you requested does not exist.</li>'."\n"
-        .'	                <li>The link you clicked is no longer.</li>'."\n"
-        .'	                <li>The page may have moved to a new location.</li>'."\n"
-        .'	                <li>An error may have occurred.</li>'."\n"
-        .'	                <li>You are not authorized to view the requested resource.</li>',
-    '500_title' => 'Page could not be loaded',
-    '500_msg' => '<li>The page you requested does not exist.</li>'."\n"
-        .'	                <li>The link you clicked is no longer.</li>'."\n"
-        .'	                <li>The page may have moved to a new location.</li>'."\n"
-        .'	                <li>An error may have occurred.</li>'."\n"
-        .'	                <li>You are not authorized to view the requested resource.</li>',
-    'reasons' => 'This may have occurred because of several reasons',
-    'try_again' => 'Please try again in a few minutes, or alternatively return to the homepage by <a href="http://cms.local/admin">clicking here</a>.',
-    'not_found' => 'Not Found',
+    '401_msg' => '<li>Sizga administrator tomonidan boʻlimga kirish ruxsati yoʻq.</li>'."\n"
+        .'<li>Sizda noto‘g‘ri hisob turi bo‘lishi mumkin.</li>'."\n"
+        .'<li>Siz so\'ralgan manbani ko\'rish huquqiga ega emassiz.</li>'."\n"
+        .'<li>Obunangiz muddati tugagan bo‘lishi mumkin.</li>',
+    '401_title' => 'Ruxsat berilmadi',
+    '404_msg' => '<li>Siz soʻragan sahifa mavjud emas.</li>'."\n"
+        .'<li>Siz bosgan havola endi yo\'q.</li>'."\n"
+        .'<li>Sahifa yangi joyga koʻchirilgan boʻlishi mumkin.</li>'."\n"
+        .'<li>Xatolik yuz bergan bo\'lishi mumkin.</li>'."\n"
+        .'<li>Siz so\'ralgan manbani ko\'rish huquqiga ega emassiz.</li>',
+    '404_title' => 'Sahifani topib bo\'lmadi',
+    '500_msg' => '<li>Siz soʻragan sahifa mavjud emas.</li>'."\n"
+        .'<li>Siz bosgan havola endi yo\'q.</li>'."\n"
+        .'<li>Sahifa yangi joyga koʻchirilgan boʻlishi mumkin.</li>'."\n"
+        .'<li>Xatolik yuz bergan bo\'lishi mumkin.</li>'."\n"
+        .'<li>Siz so\'ralgan manbani ko\'rish huquqiga ega emassiz.</li>',
+    '500_title' => 'Sahifani yuklab bo‘lmadi',
+    'not_found' => 'Topilmadi',
+    'reasons' => 'Bu bir necha sabablarga ko\'ra sodir bo\'lishi mumkin',
+    'try_again' => 'Bir necha daqiqadan so‘ng qayta urinib ko‘ring yoki <a href="http://botble.test/admin">bu yerni bosing</a> orqali bosh sahifaga qayting.',
 ];

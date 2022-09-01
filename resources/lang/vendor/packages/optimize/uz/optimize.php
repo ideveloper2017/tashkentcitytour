@@ -2,8 +2,8 @@
 
 return [
     'settings' => [
-        'title' => 'Optimize page speed',
-        'description' => 'Minify HTML output, inline CSS, remove comments...',
-        'enable' => 'Enable optimize page speed?',
+        'description' => 'HTML chiqishini, inline CSS-ni kichiklashtiring, sharhlarni olib tashlang...',
+        'enable' => 'Sahifa tezligini optimallashtirish yoqilsinmi?',
+        'title' => 'Sahifa tezligini optimallashtirish',
     ],
 ];

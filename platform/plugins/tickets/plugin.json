@@ -1,0 +1,9 @@
+{
+    "name": "Tickets",
+    "namespace": "Botble\\Tickets\\",
+    "provider": "Botble\\Tickets\\Providers\\TicketsServiceProvider",
+    "author": "N/A",
+    "url": "N/A",
+    "version": "1.0",
+    "description": "The description for module tickets"
+}

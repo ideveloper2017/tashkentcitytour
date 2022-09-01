@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'password' => 'Passwords must be at least six characters and match the confirmation.',
-    'user' => 'We can\'t find a user with that e-mail address.',
-    'token' => 'This password reset token is invalid.',
-    'sent' => 'Password reminder sent!',
-    'reset' => 'Password has been reset!',
+    'password' => 'Пароли должны состоять не менее чем из шести символов и соответствовать подтверждению.',
+    'user' => 'Мы не можем найти пользователя с этим адресом электронной почты.',
+    'token' => 'Этот токен сброса пароля недействителен.',
+    'sent' => 'Напоминание о пароле отправлено!',
+    'reset' => 'Пароль сброшен!',
 ];
