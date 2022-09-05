@@ -9,19 +9,26 @@
             Theme::set('breadcrumbBannerImage', RvMedia::getImageUrl($bannerImage));
         }
     @endphp
-    <section class="services-section spad">
-        {{--    <article class="post post--single">--}}
-        {{--        <div class="post__content">--}}
-        @if (defined('GALLERY_MODULE_SCREEN_NAME') && !empty($galleries = gallery_meta_data($page)))
-            {!! render_object_gallery($galleries) !!}
-        @endif
-        {!! apply_filters(PAGE_FILTER_FRONT_PAGE_CONTENT, clean($page->content), $page) !!}
-        {{--        </div>--}}
-        {{--    </article>--}}
-        @else
-            @if (defined('GALLERY_MODULE_SCREEN_NAME') && !empty($galleries = gallery_meta_data($page)))
-                {!! render_object_gallery($galleries) !!}
-            @endif
-            {!! apply_filters(PAGE_FILTER_FRONT_PAGE_CONTENT, clean($page->content), $page) !!}
-        @endif
-    </section>
+    @if (defined('GALLERY_MODULE_SCREEN_NAME') && !empty($galleries = gallery_meta_data($page)))
+        {!! render_object_gallery($galleries) !!}
+    @endif
+    {!! apply_filters(PAGE_FILTER_FRONT_PAGE_CONTENT, clean($page->content), $page) !!}
+@else
+    @if (defined('GALLERY_MODULE_SCREEN_NAME') && !empty($galleries = gallery_meta_data($page)))
+        {!! render_object_gallery($galleries) !!}
+    @endif
+    {!! apply_filters(PAGE_FILTER_FRONT_PAGE_CONTENT, clean($page->content), $page) !!}
+@endif
+{{--        <section class="services-section spad">--}}
+{{--        @if (defined('GALLERY_MODULE_SCREEN_NAME') && !empty($galleries = gallery_meta_data($page)))--}}
+{{--            {!! render_object_gallery($galleries) !!}--}}
+{{--        @endif--}}
+{{--        {!! apply_filters(PAGE_FILTER_FRONT_PAGE_CONTENT, clean($page->content), $page) !!}--}}
+{{--        @else--}}
+{{--            @if (defined('GALLERY_MODULE_SCREEN_NAME') && !empty($galleries = gallery_meta_data($page)))--}}
+{{--                {!! render_object_gallery($galleries) !!}--}}
+{{--            @endif--}}
+
+{{--            {!! apply_filters(PAGE_FILTER_FRONT_PAGE_CONTENT, clean($page->content), $page) !!}--}}
+{{--        @endif--}}
+{{--    </section>--}}

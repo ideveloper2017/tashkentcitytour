@@ -22,6 +22,9 @@ class Routes extends BaseModel
      */
     protected $fillable = [
         'name',
+        'days',
+        'times',
+        'routeData',
         'status',
     ];
 

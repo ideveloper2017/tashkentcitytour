@@ -3,6 +3,7 @@
 namespace Botble\Routes\Providers;
 
 use Botble\Routes\Models\Routes;
+use SlugHelper;
 use Illuminate\Support\ServiceProvider;
 use Botble\Routes\Repositories\Caches\RoutesCacheDecorator;
 use Botble\Routes\Repositories\Eloquent\RoutesRepository;
@@ -58,5 +59,11 @@ class RoutesServiceProvider extends ServiceProvider
                 'permissions' => ['routes.index'],
             ]);
         });
+
+        SlugHelper::registerModule(Routes::class,'Routes');
+        SlugHelper::setPrefix(Routes::class,'routes');
+
     }
+
+
 }

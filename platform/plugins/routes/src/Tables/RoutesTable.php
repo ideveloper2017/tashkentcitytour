@@ -58,6 +58,15 @@ class RoutesTable extends TableAbstract
             ->editColumn('checkbox', function ($item) {
                 return $this->getCheckbox($item->id);
             })
+            ->editColumn('days', function ($item) {
+                return $item->days;
+            })
+            ->editColumn('times', function ($item) {
+                return $item->times;
+            })
+            ->editColumn('routeData', function ($item) {
+                return $item->routeData;
+            })
             ->editColumn('created_at', function ($item) {
                 return BaseHelper::formatDate($item->created_at);
             })
@@ -80,6 +89,9 @@ class RoutesTable extends TableAbstract
             ->select([
                'id',
                'name',
+               'days',
+               'times',
+               'routeData',
                'created_at',
                'status',
            ]);
@@ -99,6 +111,17 @@ class RoutesTable extends TableAbstract
             ],
             'name' => [
                 'title' => trans('core/base::tables.name'),
+                'class' => 'text-start',
+            ],
+            'days' => [
+                'title' => trans('plugins/routes::routes.days'),
+                'class' => 'text-start',
+            ],
+            'times' => [
+                'title' => trans('plugins/routes::routes.times'),
+                'class' => 'text-start',
+            ],'routeData' => [
+                'title' => trans('plugins/routes::routes.routedata'),
                 'class' => 'text-start',
             ],
             'created_at' => [

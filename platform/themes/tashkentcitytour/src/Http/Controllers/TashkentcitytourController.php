@@ -13,24 +13,16 @@ use Theme;
 class TashkentcitytourController extends PublicController
 {
 
-//    public function getIndex()
-//    {
-//        return parent::getIndex();
-//    }
 
-//    public function getView($key = null)
-//    {
-//
-//        return parent::getView($key);
-//    }
+    public function getTickets(){
+        $data=[];
+        return Theme::scope('tickets',compact('data'))->render();
+    }
 
-//     public function getSiteMap()
-//    {
-//        return parent::getSiteMap();
-//    }
-
-    public function getMarshurt(Request $request, BaseHttpResponse $response){
-      return Theme::scope('route',)->render();
+    public function getRoutes(Request $request, BaseHttpResponse $response){
+        SeoHelper::setTitle('Videos');
+        Theme::breadcrumb()->add(__('Home'), url('/'))->add('Video');
+      return Theme::scope('route')->render();
     }
 
     public function getNewsVideos()
