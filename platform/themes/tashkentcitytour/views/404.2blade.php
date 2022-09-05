@@ -4,7 +4,7 @@
 @endphp
 
 {!! Theme::partial('header') !!}
-
+<section class="services-section ">
 <div class="container error-page">
     <div class="error-code">
         404
@@ -22,7 +22,7 @@
         <br>
         <strong>{!! clean(__('Please try again in a few minutes, or alternatively return to the homepage by <a href=":link">clicking here</a>.', ['link' => route('public.single')])) !!}</strong>
     </div>
-</div>
+</section>
 {!! Theme::partial('footer') !!}
 
 

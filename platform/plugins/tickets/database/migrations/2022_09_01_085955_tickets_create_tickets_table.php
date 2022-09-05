@@ -13,8 +13,18 @@ return new class extends Migration {
     {
         Schema::create('tickets', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 255);
-            $table->string('status', 60)->default('published');
+            $table->integer('order_id');
+            $table->integer('partner_id');
+            $table->integer('number');
+            $table->integer('type');
+            $table->date('date')->nullable();
+            $table->time('time')->nullable();
+            $table->integer('place')->nullable();
+            $table->integer('amount')->nullable();
+            $table->integer('total');
+            $table->integer('paid')->nullable();
+            $table->integer('activate')->nullable();
+            $table->index(['order_id','number','date','time','paid']);
             $table->timestamps();
         });
 

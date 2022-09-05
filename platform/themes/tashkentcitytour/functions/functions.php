@@ -1,5 +1,19 @@
 <?php
 
+use Botble\Base\Enums\BaseStatusEnum;
+use Botble\Base\Models\MetaBox as MetaBoxModel;
+use Botble\Blog\Models\Category;
+use Botble\Blog\Models\Post;
+use Botble\Blog\Repositories\Caches\PostCacheDecorator;
+use Botble\Blog\Repositories\Interfaces\PostInterface;
+use Botble\Comment\Repositories\Interfaces\CommentInterface;
+use Botble\Comment\Repositories\Interfaces\CommentRecommendInterface;
+use Botble\Member\Models\Member;
+use Botble\Member\Repositories\Interfaces\MemberInterface;
+use Botble\Tashkentcitytour\Repositories\Eloquent\PostRepository;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Route;
+
 register_page_template([
     'default'        => __('Default'),
     'full'           => __('Full'),
@@ -39,3 +53,324 @@ register_sidebar([
 ]);
 
 RvMedia::setUploadPathAndURLToPublic();
+RvMedia::addSize('large', 1024)
+    ->addSize('medium_large', 600, 421)
+    ->addSize('medium', 400, 400);
+
+
+if (is_plugin_active('blog')) {
+//    app()->bind(PostInterface::class, function () {
+//        return new PostCacheDecorator(new PostRepository(new Post));
+//    });
+
+    if (!function_exists('get_post')) {
+        /**
+         * @return bool
+         */
+        function get_post()
+        {
+            if (Route::currentRouteName() == 'public.single') {
+                $slug = SlugHelper::getSlug(request()->route('slug'), '');
+                if ($slug->reference_type == Post::class) {
+                    return app(PostInterface::class)
+                        ->getFirstBy([
+                            'id'     => $slug->reference_id,
+                            'status' => BaseStatusEnum::PUBLISHED,
+                        ], ['*']);
+                }
+
+                return false;
+            }
+
+            return false;
+        }
+    }
+
+    if (!function_exists('query_post')) {
+        /**
+         * @param array $params
+         * @return Collection
+         */
+        function query_post(array $params)
+        {
+            $filters = [
+                'limit'              => empty($params['limit']) ? 10 : $params['limit'],
+                'format_type'        => $params['format_type'] ?? '',
+                'categories'         => empty($params['categories']) ? null : explode(',', $params['categories']),
+                'categories_exclude' => empty($params['categories_exclude']) ? null : explode(
+                    ',',
+                    $params['categories_exclude']
+                ),
+                'exclude'            => empty($params['exclude']) ? null : explode(',', $params['exclude']),
+                'include'            => empty($params['include']) ? null : explode(',', $params['include']),
+                'order_by'           => empty($params['order_by']) ? 'updated_at' : $params['order_by'],
+            ];
+
+            if (isset($params['featured'])) {
+                $filters['featured'] = $params['featured'];
+            }
+
+            return app(PostInterface::class)->getFilters($filters);
+        }
+    }
+
+    register_post_format([
+        'video' => [
+            'key'  => 'video',
+            'icon' => 'fa fa-camera',
+            'name' => 'Video',
+        ],
+    ]);
+
+    add_action(BASE_ACTION_META_BOXES, function ($context, $object) {
+        if (get_class($object) == Category::class && $context == 'side') {
+            MetaBox::addMetaBox('additional_blog_category_fields', __('Addition Information'), function () {
+                $image = null;
+                $args = func_get_args();
+                if (!empty($args[0])) {
+                    $image = MetaBox::getMetaData($args[0], 'image', true);
+                }
+
+                return Theme::partial('blog-category-fields', compact('image'));
+            }, get_class($object), $context);
+        }
+    }, 24, 2);
+
+    add_action(BASE_ACTION_AFTER_CREATE_CONTENT, function ($type, $request, $object) {
+        if (get_class($object) == Category::class) {
+            MetaBox::saveMetaBoxData($object, 'image', $request->input('image'));
+        }
+    }, 230, 3);
+
+    add_action(BASE_ACTION_AFTER_UPDATE_CONTENT, function ($type, $request, $object) {
+        if (get_class($object) == Category::class) {
+            MetaBox::saveMetaBoxData($object, 'image', $request->input('image'));
+        }
+    }, 231, 3);
+
+    add_action(BASE_ACTION_META_BOXES, 'add_addition_fields_in_post_screen', 30, 3);
+
+    function add_addition_fields_in_post_screen($context, $object)
+    {
+        if (get_class($object) == Post::class && $context == 'top') {
+            MetaBox::addMetaBox(
+                'additional_post_fields',
+                __('Addition Information'),
+                function () {
+                    $layout = null;
+                    $timeToRead = null;
+                    $args = func_get_args();
+                    if (!empty($args[0])) {
+                        $layout = MetaBox::getMetaData($args[0], 'layout', true);
+                        $timeToRead = MetaBox::getMetaData($args[0], 'time_to_read', true);
+                    }
+
+                    return Theme::partial('metabox.time-to-read', compact('layout', 'timeToRead'));
+                },
+                get_class($object),
+                $context
+            );
+        }
+
+        //add metabox video
+        if (get_class($object) == Post::class && $context == 'advanced') {
+            MetaBox::addMetaBox(
+                'video_post_fields',
+                __('Video'),
+                function () {
+                    $videoLink = null;
+                    $args = func_get_args();
+                    if (!empty($args[0])) {
+                        $videoLink = MetaBox::getMetaData($args[0], 'video_link', true);
+                        $videoEmbedCode = MetaBox::getMetaData($args[0], 'video_embed_code', true);
+                        $videoUploadId = MetaBox::getMetaData($args[0], 'video_upload_id', true);
+                    }
+
+                    return Theme::partial(
+                        'metabox.video-field',
+                        compact('videoLink', 'videoEmbedCode', 'videoUploadId')
+                    );
+                },
+                get_class($object),
+                $context
+            );
+        }
+    }
+
+    add_action(BASE_ACTION_AFTER_CREATE_CONTENT, 'save_addition_post_fields', 230, 3);
+    add_action(BASE_ACTION_AFTER_UPDATE_CONTENT, 'save_addition_post_fields', 231, 3);
+
+    function save_addition_post_fields($type, $request, $object)
+    {
+        if (is_plugin_active('blog') && get_class($object) == Post::class) {
+            MetaBox::saveMetaBoxData($object, 'layout', $request->input('layout'));
+            MetaBox::saveMetaBoxData($object, 'time_to_read', $request->input('time_to_read'));
+            MetaBox::saveMetaBoxData($object, 'video_link', $request->input('video_link'));
+            MetaBox::saveMetaBoxData($object, 'video_embed_code', $request->input('video_embed_code'));
+            MetaBox::saveMetaBoxData($object, 'video_upload_id', $request->input('video_upload_id'));
+        }
+    }
+}
+
+app()->booted(function () {
+    if (is_plugin_active('blog')) {
+        Category::resolveRelationUsing('image', function ($model) {
+            return $model->morphOne(MetaBoxModel::class, 'reference')->where('meta_key', 'image');
+        });
+    }
+
+    if (setting('social_login_enable', false)) {
+        remove_filter(BASE_FILTER_AFTER_LOGIN_OR_REGISTER_FORM);
+        add_filter(BASE_FILTER_AFTER_LOGIN_OR_REGISTER_FORM, 'addLoginOptionsByTheme', 25);
+    }
+});
+
+if (is_plugin_active('ads')) {
+    AdsManager::registerLocation('panel-ads', __('Panel Ads'))
+        ->registerLocation('header-ads', __('Header Ads'))
+        ->registerLocation('top-sidebar-ads', __('Top Sidebar Ads'))
+        ->registerLocation('bottom-sidebar-ads', __('Bottom Sidebar Ads'))
+        ->registerLocation('custom-1', __('Custom 1'))
+        ->registerLocation('custom-2', __('Custom 2'))
+        ->registerLocation('custom-3', __('Custom 3'));
+}
+
+Form::component('themeIcon', Theme::getThemeNamespace() . '::partials.icons-field', [
+    'name',
+    'value'      => null,
+    'attributes' => [],
+]);
+
+
+if (!function_exists('is_video_post')) {
+    /**
+     * @param Post $post
+     * @return bool
+     */
+    function is_video_post($post)
+    {
+        return $post->format_type == 'video' ? true : false;
+    }
+}
+
+if (!function_exists('comment_object_enable')) {
+    /**
+     * @param Post $object
+     * @return bool
+     */
+    function comment_object_enable($object)
+    {
+        $commentStatus = $object->getMetaData('comment_status', true);
+
+        return setting('comment_enable') && ($commentStatus == 1 || $commentStatus == '') &&
+            in_array(get_class($object), json_decode(setting('comment_menu_enable', '[]'), true));
+    }
+}
+
+function addLoginOptionsByTheme($html)
+{
+    if (Route::currentRouteName() == 'access.login') {
+        if (defined('THEME_OPTIONS_MODULE_SCREEN_NAME')) {
+            Theme::asset()
+                ->usePath(false)
+                ->add(
+                    'social-login-css',
+                    asset('vendor/core/plugins/social-login/css/social-login.css'),
+                    [],
+                    [],
+                    '1.0.0'
+                );
+        }
+
+        return $html . view('plugins/social-login::login-options')->render();
+    }
+
+    return $html . Theme::partial('login-options');
+}
+
+if (!function_exists('get_category_layout')) {
+    /**
+     * @return array
+     */
+    function get_category_layout(): array
+    {
+        return [
+            'list'  => __('List'),
+            'grid'  => __('Grid'),
+            'metro' => __('Metro'),
+        ];
+    }
+}
+
+if (!function_exists('get_single_layout')) {
+    /**
+     * @return array
+     */
+    function get_single_layout(): array
+    {
+        return [
+            'default'  => __('Default'),
+            'top-full' => __('Top full'),
+            'inline'   => __('Inline'),
+        ];
+    }
+}
+
+if (!function_exists('get_related_style')) {
+    /**
+     * @return array
+     */
+    function get_related_style(): array
+    {
+        return [
+            'default' => __('Default'),
+            'popup'   => __('Popup'),
+        ];
+    }
+}
+
+if (!function_exists('display_ad')) {
+
+    function display_ad(string $location, array $attributes = []): string
+    {
+        if (!is_plugin_active('ads') || empty($location)) {
+            return '';
+        }
+
+        return AdsManager::display($location, $attributes);
+    }
+}
+
+
+if (!function_exists('get_time_to_read')) {
+    /**
+     * @param Post $post
+     * @return string
+     */
+    function get_time_to_read(Post $post)
+    {
+        $timeToRead = MetaBox::getMetaData($post, 'time_to_read', true);
+
+        if ($timeToRead) {
+            return number_format($timeToRead);
+        }
+
+        return number_format(strlen(strip_tags($post->content)) / 300);
+    }
+}
+
+if (!function_exists('post_date_format')) {
+    /**
+     * @param bool $longType
+     * @return string
+     */
+    function post_date_format($longType = true)
+    {
+        if ($longType) {
+            return theme_option('post_date_format', 'd M, Y');
+        }
+
+        return theme_option('post_date_short_format', 'M d');
+    }
+}
+

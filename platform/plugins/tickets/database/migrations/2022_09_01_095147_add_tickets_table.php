@@ -14,14 +14,18 @@ class AddTicketsTable extends Migration
     public function up()
     {
         Schema::table('tickets', function (Blueprint $table) {
-            $table->integer('type');
-            $table->string('email')->nullable();
-            $table->string('phone',16)->nullable();
-            $table->date('scheduleday');
-            $table->integer('scheduleroute')->default(0);
-            $table->integer('scheduletime')->default(0);
-            $table->integer('totaladult')->default(0);
-            $table->integer('totalchildren')->default(0);
+//            $table->integer('order_id');
+//            $table->integer('partner_id');
+//            $table->integer('number');
+//            $table->integer('type');
+//            $table->date('date')->nullable();
+//            $table->time('time')->nullable();
+//            $table->integer('place')->nullable();
+//            $table->integer('amount')->nullable();
+//            $table->integer('total');
+//            $table->integer('paid')->nullable();
+//            $table->integer('activate')->nullable();
+//            $table->index(['order_id','number','date','time','paid']);
         });
     }
 
