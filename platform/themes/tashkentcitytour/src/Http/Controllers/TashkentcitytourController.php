@@ -5,6 +5,7 @@ use Botble\Blog\Repositories\Interfaces\PostInterface;
 use Illuminate\Http\Request;
 use Botble\Base\Http\Responses\BaseHttpResponse;
 use Botble\Theme\Http\Controllers\PublicController;
+use phpDocumentor\Reflection\Types\Collection;
 use RvMedia;
 use SeoHelper;
 use SlugHelper;
@@ -22,8 +23,10 @@ class TashkentcitytourController extends PublicController
     public function getRoutes(Request $request, BaseHttpResponse $response){
         SeoHelper::setTitle('Videos');
         Theme::breadcrumb()->add(__('Home'), url('/'))->add('Video');
-      return Theme::scope('route')->render();
+        $settings=collect();
+      return Theme::scope('route',compact('settings'))->render();
     }
+
 
     public function getNewsVideos()
     {

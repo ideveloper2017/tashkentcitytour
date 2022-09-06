@@ -68,7 +68,10 @@ return [
             $theme->asset()->container('footer')->usePath()->add('jquery.nice-select.min', 'js/jquery.nice-select.min.js');
             $theme->asset()->container('footer')->usePath()->add('jquery.slicknav', 'js/jquery.slicknav.js');
             $theme->asset()->container('footer')->usePath()->add('owl.carousel.min', 'js/owl.carousel.min.js');
+            $theme->asset()->container('footer')->usePath()->add('inputmask', 'js/inputmask.min.js');
+            $theme->asset()->container('footer')->usePath()->add('jquery.inputmask.min', 'js/jquery.inputmask.min.js');
             $theme->asset()->container('footer')->usePath()->add('script', 'js/main.js');
+            $theme->asset()->container('footer')->usePath()->add('tickets', 'js/ticket.js');
 
             if (function_exists('shortcode')) {
                 $theme->composer(['page', 'post'], function (\Botble\Shortcode\View\View $view) {
