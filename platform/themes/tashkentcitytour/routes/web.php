@@ -9,7 +9,9 @@ Route::group(['namespace' => 'Theme\Tashkentcitytour\Http\Controllers', 'middlew
         // Ex: Route::get('hello', 'TashkentcitytourController@getHello');
         Route::get('/routes','TashkentcitytourController@getRoutes')->name('public.routes');
         Route::get('/tickets','TashkentcitytourController@getTickets')->name('public.tickets');
-
+        Route::post('ajax/get-route','TashkentcitytourController@getRoute')->name('public.ajax.get-route');
+        Route::post('ajax/get-time','TashkentcitytourController@getTime')->name('public.ajax.get-time');
+        Route::post('ajax/get-free-places','TashkentcitytourController@getFreePlaces')->name('public.ajax.get-free-places');
     });
 });
 

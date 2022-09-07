@@ -7,4 +7,9 @@ use Botble\Routes\Repositories\Interfaces\RoutesInterface;
 
 class RoutesRepository extends RepositoriesAbstract implements RoutesInterface
 {
+
+    public function getRoutes(array $params)
+    {
+        // TODO: Implement getRoutes() method.
+    }
 }

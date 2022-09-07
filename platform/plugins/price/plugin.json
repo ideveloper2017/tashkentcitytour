@@ -1,0 +1,9 @@
+{
+    "name": "Price",
+    "namespace": "Botble\\Price\\",
+    "provider": "Botble\\Price\\Providers\\PriceServiceProvider",
+    "author": "N/A",
+    "url": "N/A",
+    "version": "1.0",
+    "description": "The description for module price"
+}

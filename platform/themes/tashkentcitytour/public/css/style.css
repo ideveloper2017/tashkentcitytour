@@ -2594,7 +2594,7 @@ header .header-bottom .nav li a img {
 }
 .section-calc,
 .section-gray {
-    background: #f3f3f3 url(../images/bg/bg-calc.jpg) repeat;
+    background: #f3f3f3 url(/images/bg/bg-calc.jpg) repeat;
     min-height: 300px;
     border-top: 1px solid #d4d4d4;
     border-bottom: 1px solid #d4d4d4;
@@ -2647,7 +2647,7 @@ header .header-bottom .nav li a img {
     margin: 0 10px;
 }
 .pm-box {
-    margin: 35px -40px 20px;
+    margin: 35px 0px 20px;
 }
 .pm-box li {
     width: 20%;
@@ -3018,7 +3018,7 @@ header .header-bottom .nav li a img {
     height: 260px;
 }
 .section-audit {
-    background: #ffffff url(../images/bg/bg-audit.jpg) no-repeat center top;
+    background: #ffffff url(/images/bg/bg-audit.jpg) no-repeat center top;
     background-size: auto 100%;
     min-height: 415px;
 }
@@ -3132,7 +3132,7 @@ footer .phone-box {
     margin: 10px 0 25px;
 }
 footer .phone-box i.phone {
-    background: url(../images/icons/icon-phone.png) no-repeat left center;
+    background: url(/images/icons/icon-phone.png) no-repeat left center;
     display: inline-block;
     height: 18px;
     width: 18px;
@@ -3165,7 +3165,7 @@ footer .nav li a:focus {
     position: relative;
 }
 .modal-header button.close {
-    background: url(../images/icons/icon-close.png) no-repeat center top;
+    background: url(/images/icons/icon-close.png) no-repeat center top;
     height: 30px;
     width: 30px;
     right: -20px;
@@ -3175,7 +3175,7 @@ footer .nav li a:focus {
     position: absolute;
 }
 .section-route {
-    background: #f2eda4 url(../images/bg/bg-route.jpg);
+    background: #f2eda4 url(/images/bg-route.jpg);
     min-height: 300px;
 }
 .section-route .tetragon {
@@ -3205,7 +3205,7 @@ footer .nav li a:focus {
     float: left;
 }
 .section-route .foto-gallery li .thumb-wrap {
-    background: url(../images/bg/bg-thumb-wrap.png) no-repeat left top;
+    background: url(/images/bg-thumb-wrap.png) no-repeat left top;
     padding: 10px 20px;
     position: relative;
 }

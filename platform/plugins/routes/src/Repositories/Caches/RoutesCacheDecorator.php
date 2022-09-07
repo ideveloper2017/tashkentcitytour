@@ -8,4 +8,8 @@ use Botble\Routes\Repositories\Interfaces\RoutesInterface;
 class RoutesCacheDecorator extends CacheAbstractDecorator implements RoutesInterface
 {
 
+    public function getRoutes(array $params)
+    {
+        // TODO: Implement getRoutes() method.
+    }
 }
