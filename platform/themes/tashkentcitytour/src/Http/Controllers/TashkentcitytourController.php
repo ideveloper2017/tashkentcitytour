@@ -42,7 +42,7 @@ class TashkentcitytourController extends PublicController
         ];
 
         $totalPlacesAmound = 0;
-        $orderForm = Yii::$app->request->post();
+        $orderForm = $request->post();
         $phone = preg_replace("#[^0-9]*#is", "", $orderForm['phone']);
 
         $places = $orderForm['selectedPlaces'];
@@ -61,19 +61,19 @@ class TashkentcitytourController extends PublicController
         $total = 0;
         $total += $orderForm['totalAdult'];
         $total += $orderForm['totalChildren'];
-        $total += $orderForm['totalDisabled'];
-        $total += $orderForm['totalHoponhopoff'];
+//        $total += $orderForm['totalDisabled'];
+//        $total += $orderForm['totalHoponhopoff'];
         if ($total < 1) {
             die(json_encode(array('success' => false, 'message' => '<div class="alert alert-danger"><button aria-label="Close" data-dismiss="alert" class="close" type="button"><span aria-hidden="true">×</span></button>Выберите необходимое количество билетов</div>')));
         }
 
-        $captcha = $this->createAction('captcha')->getVerifyCode();
-        $verifyCode = Yii::$app->request->post('verifyCode');
-        if (isset($verifyCode)) {
-            if ($captcha != $verifyCode) {
-                die(json_encode(array('success' => false, 'message' => '<div class="alert alert-danger"><button aria-label="Close" data-dismiss="alert" class="close" type="button"><span aria-hidden="true">×</span></button>Вы неверно ввели проверочный код</div>')));
-            }
-        }
+//        $captcha = $this->createAction('captcha')->getVerifyCode();
+//        $verifyCode = $request->post('verifyCode');
+//        if (isset($verifyCode)) {
+//            if ($captcha != $verifyCode) {
+//                die(json_encode(array('success' => false, 'message' => '<div class="alert alert-danger"><button aria-label="Close" data-dismiss="alert" class="close" type="button"><span aria-hidden="true">×</span></button>Вы неверно ввели проверочный код</div>')));
+//            }
+//        }
 
         if ($totalSelectedPlaces) {
             if ($totalSelectedPlaces <= $total) {
@@ -86,7 +86,7 @@ class TashkentcitytourController extends PublicController
 
 //        $settings->set('usd', 2560.42, 'currency', 'integer');
 //        pre($settings->get('currency.usd'), 1);
-        $order = new \common\models\Order();
+        $order = app();
         $orderData = [
             'name' => $orderForm['name'],
             'email' => $orderForm['email'],
@@ -209,7 +209,7 @@ CODE;
 
 
 
-        die(json_encode(array('success' => true, 'message' => $this->renderPartial('___ordertable', ['order' => $order, 'clickButton' => $clickButton]))));
+        echo (json_encode(array('success' => true, 'message' => $this->renderPartial('___ordertable', ['order' => $order, 'clickButton' => $clickButton]))));
 //        pre($newTickets);
     }
     public function getTickets(){
