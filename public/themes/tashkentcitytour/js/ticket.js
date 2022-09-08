@@ -22,7 +22,7 @@ $(document).ready(function () {
         var summ = 0;
         var dataprice = 0;
         var number = 0;
-       // $('#hoponhopoff').attr('data-price', currencyUSD * 20);
+       $('#hoponhopoff').attr('data-price', currencyUSD * 20);
 
         var index = 0;
         var places = [];
@@ -35,11 +35,12 @@ $(document).ready(function () {
         $('.pm-box .bfh-number').each(function () {
             dataprice = parseInt($(this).attr('data-price'));
             number = $(this).val();
+            // alert(number);
             summ = number * dataprice + summ;
         });
-        $('#result').html(summ);
+        $('#result').html(summ.toFloatStr(0, 1));
         var usdres = summ / currencyUSD
-        $('#usdresult').html(usdres);
+        $('#usdresult').html(usdres.roundTo(2));
     }
 
 // При клике на кнопки выбора мест

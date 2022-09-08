@@ -51,6 +51,7 @@ return [
             // });
 
             // You may use this event to set up your assets.
+            $theme->asset()->usePath()->add('jquery-ui.min', 'css/jquery-ui.css');
             $theme->asset()->usePath()->add('bootstrap', 'css/bootstrap.css');
 //            $theme->asset()->usePath()->add('bootstrap.min', 'css/bootstrap.min.css');
             $theme->asset()->usePath()->add('bootstrap-plugins', 'css/bootstrap-plugins.css');
@@ -58,24 +59,27 @@ return [
             $theme->asset()->usePath()->add('font-awesome', 'css/font-awesome.min.css');
             $theme->asset()->usePath()->add('flaticon', 'css/flaticon.css');
             $theme->asset()->usePath()->add('owl.carousel.min', 'css/owl.carousel.min.css');
-            $theme->asset()->usePath()->add('jquery-ui.min', 'css/jquery-ui.min.css');
+
             $theme->asset()->usePath()->add('nice-select', 'css/nice-select.css');
             $theme->asset()->usePath()->add('magnific-popup', 'css/magnific-popup.css');
             $theme->asset()->usePath()->add('slicknav.min', 'css/slicknav.min.css');
             $theme->asset()->usePath()->add('style.css', 'css/style.css');
+            $theme->asset()->usePath()->add('style2.css', 'css/style2.css');
 
             $theme->asset()->container('footer')->usePath()->add('jquery', 'js/jquery-3.3.1.min.js');
+            $theme->asset()->container('footer')->usePath()->add('jquery-ui.min', 'js/jquery-ui.min.js');
             $theme->asset()->container('footer')->usePath()->add('bootstrap', 'js/bootstrap.js');
-//            $theme->asset()->container('footer')->usePath()->add('bootstrap.min', 'js/bootstrap.min.js');
             $theme->asset()->container('footer')->usePath()->add('bootstrap-plugins', 'js/bootstrap-plugins.js');
             $theme->asset()->container('footer')->usePath()->add('jquery.magnific-popup.min', 'js/jquery.magnific-popup.min.js');
-            $theme->asset()->container('footer')->usePath()->add('jquery-ui.min', 'js/jquery-ui.min.js');
+
             $theme->asset()->container('footer')->usePath()->add('jquery.nice-select.min', 'js/jquery.nice-select.min.js');
             $theme->asset()->container('footer')->usePath()->add('jquery.slicknav', 'js/jquery.slicknav.js');
             $theme->asset()->container('footer')->usePath()->add('owl.carousel.min', 'js/owl.carousel.min.js');
             $theme->asset()->container('footer')->usePath()->add('inputmask', 'js/inputmask.min.js');
             $theme->asset()->container('footer')->usePath()->add('jquery.validate.min', 'js/jquery.validate.min.js');
             $theme->asset()->container('footer')->usePath()->add('jquery.form', 'js/jquery.form.js');
+            $theme->asset()->container('footer')->usePath()->add('Js-Veremax', 'js/Js-Veremax-1.1.js');
+            $theme->asset()->container('footer')->usePath()->add('Number', 'js/Number.js');
             $theme->asset()->container('footer')->usePath()->add('jquery.inputmask.min', 'js/jquery.inputmask.min.js');
             $theme->asset()->container('footer')->usePath()->add('script', 'js/main.js');
             $theme->asset()->container('footer')->usePath()->add('tickets', 'js/ticket.js');

@@ -11,13 +11,13 @@
 </section>
 <section class="section-calc">
     <div class="container">
-
+        <form action="/ajax/createorder" method="post" id="orderForm">
+            @csrf
         <div id="form-params" >
             <div class="select-group box bg-base">
                 <div class="row">
                     <div class="col-xs-12 col-sm-4">
                         <div class="input-group">
-{{--                            <input type="text" class="datepicker-1" value="dd / mm / yyyy">--}}
                             <input type="text" id="scheduleDay" class="form-control datepicker-1" name="scheduleDay" value="" placeholder="Выберите дату">
                             <span class="caret-wrap input-group-addon btn"><span class="fa fa-calendar" aria-hidden="true"></span></span>
                         </div>
@@ -38,12 +38,38 @@
                     </div>
                 </div>
             </div>
-            <div class="pm-box">
-                <ul class="nav nav-justified">
-                    <li><div class="txt">Взрослые<small>(13-59 лет)</small></div><input name="totalAdult" type="text" class="form-control bfh-number" data-max="54" data-price="{{ $settings['ticketPrice']['adult'] }}" value="0" /></li>
-                    <li><div class="txt">Дети <small>(6-12 лет)</small></div><input name="totalChildren" type="text" class="form-control bfh-number" data-max="54" data-price="{{ $settings['ticketPrice']['children'] }}" value="0"  /></li>
-                </ul>
-            </div>
+
+
+                    <div class="row">
+                                    <div class="pm-box check-form">
+                                        <div class="room-quantity">
+
+                                        <ul class="nav nav-justified">
+                                            <li><div class="txt">Взрослые<small>(13-59 лет)</small></div>
+                                                <input name="totalAdult" type="text" class="form-control bfh-number" data-max="54" data-price="{{ $settings['ticketPrice']['adult'] }}" value="0" /></li>
+                                            <li><div class="txt">Дети <small>(6-12 лет)</small></div>
+                                                <input name="totalChildren" type="text" class="form-control bfh-number" data-max="54" data-price="{{ $settings['ticketPrice']['children'] }}" value="0"  /></li>
+                                        </ul>
+                                    </div>
+
+                                    </div>
+
+
+{{--                        <div class="check-form">--}}
+{{--                             <div class="room-quantity">--}}
+{{--                                    <div class="single-quantity">--}}
+{{--                                        <p class="txt">ВЗРОСЛЫЕ <br/><small>(13-59 лет)</small> </p>--}}
+{{--                                        <div class="pro-qty"><input type="text" value="0"  class="bfh-number" name="totalAdult" data-max="54" data-price="{{ $settings['ticketPrice']['adult'] }}"></div>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="single-quantity">--}}
+{{--                                        <p>ДЕТИ <br/><small>(6-12 лет)</small></p>--}}
+{{--                                        <div class="pro-qty"><input type="text" value="0" class="bfh-number" name="totalChildren"  data-max="54" data-price="{{ $settings['ticketPrice']['adult'] }}"></div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+
+{{--                        </div>--}}
+                    </div>
+
             <div class="choice-location">
                 <div class="checkbox">
                     <label class="checkbox-custom" data-initialize="checkbox" data-toggle="collapse" data-target="#bus-wrap">
@@ -203,8 +229,47 @@
 
             </div>
         </div>
+        </form>
         <div id="payment-params" class="collapse payment-params">
         </div>
     </div>
 </section>
+
+<div id="oferta" class="fade modal" role="dialog" tabindex="-1">
+    <div class="modal-dialog ">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h2>Правила</h2>
+            </div>
+            <div class="modal-body">
+                <p>Турист на данном сайте обязан ознакомиться с правилами поведения в экскурсионном автобусе и обращения с оборудованием салона.</p>
+                <ol>
+                    <li>Обзорная экскурсия по г. Ташкенту начинается в указанные на сайте часы.</li>
+                    <li>Дети до 6 лет (бесплатно) без места.</li>
+                    <li>Порядок посадки туристов и граждан Республики Узбекистан в экскурсионный автобус производится в порядке живой очереди на свободные места, кроме случаев когда билет был приобретен на сайте с указанием конкретного места.</li>
+                    <li>Следует строго придерживаться некоторых правил поведения в экскурсионном автобусе: в автобусе запрещается оставлять мусор,грызть семечки, оставлять пустые бутылки, фантики, очистки от&nbsp;фруктов и т.д. и не употреблять спиртные напитки (в т.ч. пиво!).&nbsp;<strong>Категорически запрещается</strong>&nbsp;курить в салоне, курение возможно только во время остановок, которые осуществляются на установленных маршрутах местах. Вы входите в чистый автобус. Выйти вы должны из чистого автобуса.&nbsp;</li>
+                </ol>
+                <ol>
+                    <li>Пассажир должен бережно обращаться с оборудованием автобуса, не допускать его порчи.</li>
+                    <li>Приём пищи и прохладительных напитков разрешается&nbsp;<strong>ТОЛЬКО</strong>&nbsp;на остановках.</li>
+                    <li>Мусор необходимо складывать в индивидуальные пакеты и выбрасывать в мусоросборник в автобусе.</li>
+                </ol>
+                <ol start="8">
+                    <li>По правилам туристических перевозок все пассажиры автобуса должны быть пристёгнуты – при наличии ремней безопасности на всех местах.</li>
+                    <li>Для безопасности движения во время следования автобуса по&nbsp;маршруту запрещается хождение по автобусу, нельзя высовывать голову, руки в окна. <strong>Категорически запрещается&nbsp;</strong>ставить сумки, рюкзаки в проходах. В целях безопасности движения проход должен быть свободным.</li>
+                    <li><strong>Запрещается&nbsp;</strong>отвлекать водителя во время движения. Все предложения и пожелания, предназначенные для водителя – передавать через своего гида-сопровождающего.</li>
+                    <li>Пассажир несет&nbsp;<strong>материальную ответственность</strong>за ущерб, нанесенный им транспортному средству и его оборудованию.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Во время экстренного торможения надо упереться ногами и руками во впереди стоящее кресло.</li>
+                    <li>В случае аварии&nbsp;&nbsp;необходимо чётко выполнять инструкции водителя, руководителя группы или лиц их заменяющих.</li>
+                    <li>Во время конечной остановки автобуса не вставать с мест до особого распоряжения водителя автобуса или сопровождающего. Выходить&nbsp;из автобуса надо по очереди, не толкаясь. Также, по очереди, надо&nbsp;заходить в автобус. Последним в автобус заходит руководитель&nbsp;группы, чтобы проверить её численность. Последним он его и покидает.</li>
+                    <li>Экскурсия проводится как для индивидуальных туристов так и для для группы. Во время проведения&nbsp;экскурсии нужно внимательно слушать аудио гид, не разговаривать, не мешать окружающим.</li>
+                    <li>Если вам необходимо отлучиться в туалет или вы почувствовали себя плохо во время проведения экскурсии, нужно обратиться к сопровождающему.</li>
+                </ol>
+                <p>Дорогие жители Узбекистана и гости нашей столицы. &nbsp;<strong>Будьте вежливы и предупре</strong><strong>дительны. Экскурсия — это не пикник, а познавательная поездка.</strong></p>
+                <p>&nbsp;</p>
+            </div>
+
+        </div>
+    </div>
+</div>
 
