@@ -3,16 +3,13 @@
 namespace Theme\Tashkentcitytour\Http\Controllers;
 use Botble\Blog\Repositories\Interfaces\PostInterface;
 use Botble\Price\Repositories\Interfaces\PriceInterface;
-use Botble\Routes\Models\Order;
 use Botble\Routes\Models\Reis;
 use Botble\Routes\Models\Routes;
 use Botble\Routes\Repositories\Interfaces\RoutesInterface;
-use Botble\Tickets\Models\Tickets;
 use Botble\Tickets\Repositories\Interfaces\TicketsInterface;
 use Illuminate\Http\Request;
 use Botble\Base\Http\Responses\BaseHttpResponse;
 use Botble\Theme\Http\Controllers\PublicController;
-use phpDocumentor\Reflection\Types\Collection;
 use RvMedia;
 use SeoHelper;
 use SlugHelper;
@@ -22,16 +19,17 @@ class TashkentcitytourController extends PublicController
 {
 
 
-    public function createOrder(Request $request) {
+    public function createOrder(Request $request)
+    {
         $this->layout = false;
 
-        $collections=app(PriceInterface::class)->getModel()->get();
-        $data=[];
-        foreach($collections as $key=>$row){
-            $data[$row->section][$row->key]=$row->value;
+        $collections = app(PriceInterface::class)->getModel()->get();
+        $data = [];
+        foreach ($collections as $key => $row) {
+            $data[$row->section][$row->key] = $row->value;
         }
 
-        $settings=$data;
+        $settings = $data;
 
         $days = [
             'day_1' => 'Monday',
@@ -50,7 +48,7 @@ class TashkentcitytourController extends PublicController
         $places = $orderForm['selectedPlaces'];
         $places = explode('|', $places);
         $places = array_filter(
-            $places, function($el) {
+            $places, function ($el) {
             return !empty($el);
         }
         );
@@ -84,6 +82,8 @@ class TashkentcitytourController extends PublicController
                 $totalPlacesAmound = $total * $settings['ticketPrice']['selectPlace'];
             }
         }
+
+
 //        $settings->set('usd', 2560.42, 'currency', 'integer');
 //        pre($settings->get('currency.usd'), 1);
         $date = date("Y-m-d H:i:s", strtotime($orderForm['scheduleDay'].' '. date('H:i:s')));
@@ -268,27 +268,29 @@ CODE;
         return Theme::scope('tickets',compact('data'))->render();
     }
 
-    public function getRoutes(Request $request, BaseHttpResponse $response){
+    public function getRoutes(Request $request, BaseHttpResponse $response)
+    {
         SeoHelper::setTitle('Videos');
         Theme::breadcrumb()->add(__('Home'), url('/'))->add(__('Routes'));
-        $collections=app(PriceInterface::class)->getModel()->get();
+        $collections = app(PriceInterface::class)->getModel()->get();
 
-        $data=[];
-        foreach($collections as $key=>$row){
-            $data[$row->section][$row->key]=$row->value;
+        $data = [];
+        foreach ($collections as $key => $row) {
+            $data[$row->section][$row->key] = $row->value;
         }
 
-        $settings=$data;
+        $settings = $data;
 //        $settings=$collect->get('1');
 //        dd($settings['ticketPrice']['adult']);
-        return Theme::scope('route',compact('settings'))->render();
+        return Theme::scope('route', compact('settings'))->render();
     }
 
-    public function getRoute(Request $request, BaseHttpResponse $response){
-        $day=$request->post('day');
-        $routes=app(RoutesInterface::class)->getModel()->where('days','LIKE','%'.date('w', strtotime($day)).'%')->get();
+    public function getRoute(Request $request, BaseHttpResponse $response)
+    {
+        $day = $request->post('day');
+        $routes = app(RoutesInterface::class)->getModel()->where('days', 'LIKE', '%' . date('w', strtotime($day)) . '%')->get();
         if (!count($routes)) {
-            echo ('<option value="0">В этот день нет рейсов</option>');
+            echo('<option value="0">В этот день нет рейсов</option>');
         } else {
             foreach ($routes as $route) {
                 echo '<option value="' . $route->id . '">' . $route->name . '</option>';
@@ -296,15 +298,16 @@ CODE;
         }
     }
 
-    public function getTime(Request $request) {
+    public function getTime(Request $request)
+    {
         $route = $request->post('route');
         if ($route == 0) {
             die('<option value="0">В этот день нет рейсов</option>');
         }
-        $day = $date =$request->post('day');
+        $day = $date = $request->post('day');
         $date = date('Y-m-d', strtotime($date));
 
-        $reis=Reis::where('date',$date)->where('route_id',$route)->get()->toArray();
+        $reis = Reis::where('date', $date)->where('route_id', $route)->get()->toArray();
         $r = [];
         if ($reis !== null) {
             foreach ($reis as $v) {
@@ -332,12 +335,13 @@ CODE;
         }
     }
 
-    public function getFreePlaces(Request $request) {
+    public function getFreePlaces(Request $request)
+    {
         $post = $request->post();
         if ($post !== null) {
-            if(isset($post['day'])){
+            if (isset($post['day'])) {
                 $date = date("Y-m-d", strtotime($post['day']));
-                $shedule = app(TicketsInterface::class)->getModel()->where('date',$date)->where('time',$post['time'])->get()->toArray();
+                $shedule = app(TicketsInterface::class)->getModel()->where('date', $date)->where('time', $post['time'])->get()->toArray();
                 $pl = [];
                 foreach ($shedule as $s) {
                     $pl[] = $s['place'];
@@ -357,11 +361,11 @@ CODE;
             'condition' => [
                 'posts.format_type' => 'video',
             ],
-            'paginate'  => [
-                'per_page'      => 10,
+            'paginate' => [
+                'per_page' => 10,
                 'current_paged' => (int)request()->input('page', 1),
             ],
-            'order_by'  => ['created_at' => 'DESC'],
+            'order_by' => ['created_at' => 'DESC'],
         ]);
 
         $postsLayout = 'metro';
