@@ -9,17 +9,7 @@ use Botble\Base\Models\BaseModel;
 class Reis extends BaseModel
 {
     use EnumCastable;
-
-    /**
-     * The database table used by the model.
-     *
-     * @var string
-     */
     protected $table = 'reis';
-
-    /**
-     * @var array
-     */
     protected $fillable = [
         'date',
         'time',
@@ -29,9 +19,7 @@ class Reis extends BaseModel
         'status',
     ];
 
-    /**
-     * @var array
-     */
+
     protected $casts = [
         'status' => BaseStatusEnum::class,
     ];
