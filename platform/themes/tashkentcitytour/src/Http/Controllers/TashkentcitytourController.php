@@ -3,9 +3,11 @@
 namespace Theme\Tashkentcitytour\Http\Controllers;
 use Botble\Blog\Repositories\Interfaces\PostInterface;
 use Botble\Price\Repositories\Interfaces\PriceInterface;
+use Botble\Routes\Models\Order;
 use Botble\Routes\Models\Reis;
 use Botble\Routes\Models\Routes;
 use Botble\Routes\Repositories\Interfaces\RoutesInterface;
+use Botble\Tickets\Models\Tickets;
 use Botble\Tickets\Repositories\Interfaces\TicketsInterface;
 use Illuminate\Http\Request;
 use Botble\Base\Http\Responses\BaseHttpResponse;
@@ -82,23 +84,24 @@ class TashkentcitytourController extends PublicController
                 $totalPlacesAmound = $total * $settings['ticketPrice']['selectPlace'];
             }
         }
-
-
 //        $settings->set('usd', 2560.42, 'currency', 'integer');
 //        pre($settings->get('currency.usd'), 1);
-        $order = app();
+        $date = date("Y-m-d H:i:s", strtotime($orderForm['scheduleDay'].' '. date('H:i:s')));
+        $order = app(Order::class);
         $orderData = [
             'name' => $orderForm['name'],
             'email' => $orderForm['email'],
             'phone' => $orderForm['phone'],
+            'order_date'=>$date,
             'total' =>
                 ($orderForm['totalAdult'] * $settings['ticketPrice']['adult']) +
-                ($orderForm['totalChildren'] * $settings['ticketPrice']['children']) +
-                ($orderForm['totalDisabled'] * $settings['ticketPrice']['disabled'])
+                ($orderForm['totalChildren'] * $settings['ticketPrice']['children'])
+//                ($orderForm['totalDisabled'] * $settings['ticketPrice']['disabled'])
             ,
             'order_hash' => md5(time())
         ];
-        $order->setAttributes($orderData);
+        //$order->setAttributes($orderData);
+        $order->fill($orderData);
         if ($order->save()) {
             $order_id = $order->id;
         } else {
@@ -110,7 +113,7 @@ class TashkentcitytourController extends PublicController
           } else {
           $date = date("Y-m-d", strtotime($days[$orderForm['scheduleDay']]));
           } */
-        $date = date("Y-m-d", strtotime($orderForm['scheduleDay']));
+
 
         $newTickets = [];
 
@@ -136,28 +139,28 @@ class TashkentcitytourController extends PublicController
                 $this->createTicket($order_id, 'children', $date, $orderForm['scheduleTime'], $place);
             }
         }
-        if ($orderForm['totalDisabled'] > 0) {
-            for ($i = 1; $i <= $orderForm['totalDisabled']; $i++) {
-                $place = 0;
-                if (count($places)) {
-                    $place = $places[0];
-                    unset($places[0]);
-                    sort($places);
-                }
-                $this->createTicket($order_id, 'disabled', $date, $orderForm['scheduleTime'], $place);
-            }
-        }
-        if ($orderForm['totalHoponhopoff'] > 0) {
-            for ($i = 1; $i <= $orderForm['totalHoponhopoff']; $i++) {
-                $place = 0;
-                if (count($places)) {
-                    $place = $places[0];
-                    unset($places[0]);
-                    sort($places);
-                }
-                $this->createTicket($order_id, 'hoponhopoff', $date, $orderForm['scheduleTime'], $place);
-            }
-        }
+//        if ($orderForm['totalDisabled'] > 0) {
+//            for ($i = 1; $i <= $orderForm['totalDisabled']; $i++) {
+//                $place = 0;
+//                if (count($places)) {
+//                    $place = $places[0];
+//                    unset($places[0]);
+//                    sort($places);
+//                }
+//                $this->createTicket($order_id, 'disabled', $date, $orderForm['scheduleTime'], $place);
+//            }
+//        }
+//        if ($orderForm['totalHoponhopoff'] > 0) {
+//            for ($i = 1; $i <= $orderForm['totalHoponhopoff']; $i++) {
+//                $place = 0;
+//                if (count($places)) {
+//                    $place = $places[0];
+//                    unset($places[0]);
+//                    sort($places);
+//                }
+//                $this->createTicket($order_id, 'hoponhopoff', $date, $orderForm['scheduleTime'], $place);
+//            }
+//        }
 
         $secret = "tgzjBmfQWPHUbAO#P6Fswr"; //Нужно заменить параметры на полученные
         $date = date("Y-m-d h:i:s");
@@ -204,14 +207,62 @@ class TashkentcitytourController extends PublicController
 	<button type="submit" class="click_logo"><i></i>Оплатить через CLICK</button>
 </div>
 CODE;
-
-
-
-
-
-        echo (json_encode(array('success' => true, 'message' => $this->renderPartial('___ordertable', ['order' => $order, 'clickButton' => $clickButton]))));
-//        pre($newTickets);
+       echo (json_encode(array('success' => true, 'message' =>Theme::partial('ordertable',['settings'=>$settings,'order' => $order, 'clickButton' => $clickButton]))));
     }
+
+
+    protected function createTicket($order, $type = 'adult', $date, $time, $place = 0) {
+
+        $reis = Reis::where(['date' => $date, 'time' => $time])->first();
+        if ($reis === null) {
+            $reis = new Reis();
+            $reis->date = $date;
+            $reis->time = $time;
+            $reis->save();
+        }
+
+//        $settings = Yii::$app->settings;
+        $collections=app(PriceInterface::class)->getModel()->get();
+        $data=[];
+        foreach($collections as $key=>$row){
+            $data[$row->section][$row->key]=$row->value;
+        }
+        $settings=$data;
+        $ticket = new Tickets();
+        $randNum = rand(10000000, 99999999);
+        $price = $settings['ticketPrice'][$type];
+        if ($type == 'hoponhopoff') {
+            $price = $price * $settings['currency']['usd'];
+        }
+        $amount = $total = $price;
+
+        if ($place > 0) {
+            if ($type == 'hoponhopoff') {
+                $total = + $amount + ($settings['ticketPrice']['selectPlace'] / $settings['currency']['usd']);
+            } else {
+                $total = + $amount + $settings['ticketPrice']['selectPlace'];
+            }
+        }
+        $data = [
+            'order_id' => $order,
+            'type' => $type,
+            'number' => $randNum,
+            'amount' => ceil($amount),
+            'total' => ceil($total),
+            'date' => $date,
+            'time' => $time,
+            'place' => $place,
+        ];
+        $ticket->fill($data);
+        if ($ticket->save()) {
+          //  $reis->updateCounters(['total' => 1]);
+            return $ticket;
+        } else {
+            pre($ticket->getErrors(), 1);
+            return false;
+        }
+    }
+
     public function getTickets(){
         $data=[];
         return Theme::scope('tickets',compact('data'))->render();

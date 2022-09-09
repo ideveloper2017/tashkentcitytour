@@ -21,8 +21,17 @@ class Tickets extends BaseModel
      * @var array
      */
     protected $fillable = [
-        'name',
-        'status',
+        'order_id',
+        'partner_id',
+        'number',
+        'type',
+        'date',
+        'time',
+        'place',
+        'amount',
+        'total',
+        'paid',
+        'activate',
     ];
 
     /**

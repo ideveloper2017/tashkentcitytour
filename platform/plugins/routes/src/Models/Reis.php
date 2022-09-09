@@ -35,4 +35,8 @@ class Reis extends BaseModel
     protected $casts = [
         'status' => BaseStatusEnum::class,
     ];
+
+    public function updateCounters(array $data){
+
+    }
 }
