@@ -13,6 +13,7 @@ Route::group(['namespace' => 'Theme\Tashkentcitytour\Http\Controllers', 'middlew
         Route::post('ajax/get-time','TashkentcitytourController@getTime')->name('public.ajax.get-time');
         Route::post('ajax/get-free-places','TashkentcitytourController@getFreePlaces')->name('public.ajax.get-free-places');
         Route::post('ajax/createorder','TashkentcitytourController@createOrder')->name('public.ajax.createorder');
+        Route::post('site/thank','TashkentcitytourController@thank')->name('public.site.thank');
     });
 });
 

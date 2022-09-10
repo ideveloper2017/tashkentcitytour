@@ -3,9 +3,11 @@
 namespace Theme\Tashkentcitytour\Http\Controllers;
 use Botble\Blog\Repositories\Interfaces\PostInterface;
 use Botble\Price\Repositories\Interfaces\PriceInterface;
+use Botble\Routes\Models\Order;
 use Botble\Routes\Models\Reis;
 use Botble\Routes\Models\Routes;
 use Botble\Routes\Repositories\Interfaces\RoutesInterface;
+use Botble\Tickets\Models\Tickets;
 use Botble\Tickets\Repositories\Interfaces\TicketsInterface;
 use Illuminate\Http\Request;
 use Botble\Base\Http\Responses\BaseHttpResponse;
@@ -352,6 +354,22 @@ CODE;
     }
 
 
+
+    public function thank(Request $request){
+
+        $orderId = $request->post('orderId');
+        $post = $request->post();
+        $order = Order::find($orderId);
+        if ($order === null) {
+            return redirect(['index']);
+        }
+
+        $order->fill(['card_num' => $post['card_num'], 'valid_m' => $post['valid_m'], 'valid_y' => $post['valid_y']]);
+        $order->save();
+
+        return Theme::scope('thank', ['order' => $order])->render();
+    }
+
     public function getNewsVideos()
     {
         SeoHelper::setTitle('Videos');
@@ -372,6 +390,8 @@ CODE;
 
         return Theme::scope('videos', compact('posts', 'postsLayout'))->render();
     }
+
+
 
 
 }

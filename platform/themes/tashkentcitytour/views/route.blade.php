@@ -38,8 +38,6 @@
                     </div>
                 </div>
             </div>
-
-
                     <div class="row">
                                     <div class="pm-box check-form">
                                         <div class="room-quantity">
@@ -226,7 +224,6 @@
         </div>
         <div class="row">
             <div class="col-sm-12" id="statusForm">
-
             </div>
         </div>
         </form>
