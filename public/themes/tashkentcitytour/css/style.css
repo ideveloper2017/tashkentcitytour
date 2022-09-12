@@ -337,7 +337,7 @@ ol {
 }
 
 .inner-header .main-menu ul li .drop-menu li:hover>a {
-	background: #F9AD81;
+	background: #dc000c;
 	color: #ffffff;
 }
 
@@ -346,7 +346,7 @@ ol {
 }
 
 .inner-header .main-menu ul li.active a {
-	color: #F9AD81;
+	color: #dc000c;
 }
 
 .inner-header .main-menu ul li.active a:after {
