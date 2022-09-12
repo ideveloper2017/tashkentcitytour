@@ -8,7 +8,7 @@ Route::group(['namespace' => 'Theme\Tashkentcitytour\Http\Controllers', 'middlew
         // Add your custom route here
         // Ex: Route::get('hello', 'TashkentcitytourController@getHello');
         Route::get('/routes','TashkentcitytourController@getRoutes')->name('public.routes');
-        Route::get('/shedules','TashkentcitytourController@getRoutes')->name('public.routes');
+        Route::get('/shedules','TashkentcitytourController@getShedules')->name('public.shedules');
         Route::get('/tickets','TashkentcitytourController@getTickets')->name('public.tickets');
         Route::post('ajax/get-route','TashkentcitytourController@getRoute')->name('public.ajax.get-route');
         Route::post('ajax/get-time','TashkentcitytourController@getTime')->name('public.ajax.get-time');
