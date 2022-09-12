@@ -9,6 +9,7 @@
             Theme::set('breadcrumbBannerImage', RvMedia::getImageUrl($bannerImage));
         }
     @endphp
+    @php Theme::partial('section-area') @endphp
     @if (defined('GALLERY_MODULE_SCREEN_NAME') && !empty($galleries = gallery_meta_data($page)))
         {!! render_object_gallery($galleries) !!}
     @endif
