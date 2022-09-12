@@ -285,6 +285,11 @@ CODE;
         }
     }
 
+    public function getShedules(){
+        $data=[];
+        return Theme::scope('shedules',compact('data'))->render();
+    }
+
     public function getTickets(){
         $data=[];
         return Theme::scope('tickets',compact('data'))->render();
