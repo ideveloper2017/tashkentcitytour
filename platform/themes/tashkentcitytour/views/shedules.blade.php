@@ -1,26 +1,31 @@
 <div class="hero-area set-bg other-page" data-setbg="{!! Theme::asset()->url('img/about_bg.jpg') !!}"
      style="background-image: url({!! Theme::asset()->url('img/about_bg.jpg') !!});">
 </div>
-<div class="page-header text-center">
-    <h1 class="text-uppercase">Расписание</h1>
-    <p>Начните свою обзорную экскурсию по Ташкенту в любое удобное для Вас время.</p>
-</div>
+<section class="section-gray p-before">
+    <div class="container">
+        <div class="page-header text-center">
+            <h1 class="text-uppercase">Расписание</h1>
+            <p>Начните свою обзорную экскурсию по Ташкенту в любое удобное для Вас время.</p>
+        </div>
 
-<div class="timetable table-responsive">
+        <div class="timetable table-responsive">
 
 
 
-    <table class="table table-bordered">
-        <thead>
-        <tr>
-            <th class="col-xs-2">День недели</th>
-            <th class="col-xs-5">Время отправления на <span style="color: #ed1c24;">дневной маршрут</span></th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr><td>Понедельник</td><td><ul><li>10:00</li><li>11:00</li><li>12:00</li><li>13:00</li><li>14:00</li><li>15:00</li><li>16:00</li><li>17:00</li></ul></td></tr><tr><td>Вторник</td><td><ul><li>10:00</li><li>11:00</li><li>12:00</li><li>13:00</li><li>14:00</li><li>15:00</li><li>16:00</li><li>17:00</li></ul></td></tr><tr><td>Среда</td><td><ul><li>10:00</li><li>11:00</li><li>12:00</li><li>13:00</li><li>14:00</li><li>15:00</li><li>16:00</li><li>17:00</li></ul></td></tr><tr><td>Четверг</td><td><ul><li>10:00</li><li>11:00</li><li>12:00</li><li>13:00</li><li>14:00</li><li>15:00</li><li>16:00</li><li>17:00</li></ul></td></tr><tr><td>Пятница</td><td><ul><li>10:00</li><li>11:00</li><li>12:00</li><li>13:00</li><li>14:00</li><li>15:00</li><li>16:00</li><li>17:00</li></ul></td></tr><tr><td>Суббота</td><td><ul><li>10:00</li><li>11:00</li><li>12:00</li><li>13:00</li><li>14:00</li><li>15:00</li><li>16:00</li><li>17:00</li></ul></td></tr><tr><td>Воскресенье</td><td><ul><li>10:00</li><li>11:00</li><li>12:00</li><li>13:00</li><li>14:00</li><li>15:00</li><li>16:00</li><li>17:00</li></ul></td></tr>                </tbody>
-    </table>
-</div>
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th class="col-xs-2">День недели</th>
+                    <th class="col-xs-5">Время отправления на <span style="color: #ed1c24;">дневной маршрут</span></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr><td>Понедельник</td><td><ul><li>10:00</li><li>11:00</li><li>12:00</li><li>13:00</li><li>14:00</li><li>15:00</li><li>16:00</li><li>17:00</li></ul></td></tr><tr><td>Вторник</td><td><ul><li>10:00</li><li>11:00</li><li>12:00</li><li>13:00</li><li>14:00</li><li>15:00</li><li>16:00</li><li>17:00</li></ul></td></tr><tr><td>Среда</td><td><ul><li>10:00</li><li>11:00</li><li>12:00</li><li>13:00</li><li>14:00</li><li>15:00</li><li>16:00</li><li>17:00</li></ul></td></tr><tr><td>Четверг</td><td><ul><li>10:00</li><li>11:00</li><li>12:00</li><li>13:00</li><li>14:00</li><li>15:00</li><li>16:00</li><li>17:00</li></ul></td></tr><tr><td>Пятница</td><td><ul><li>10:00</li><li>11:00</li><li>12:00</li><li>13:00</li><li>14:00</li><li>15:00</li><li>16:00</li><li>17:00</li></ul></td></tr><tr><td>Суббота</td><td><ul><li>10:00</li><li>11:00</li><li>12:00</li><li>13:00</li><li>14:00</li><li>15:00</li><li>16:00</li><li>17:00</li></ul></td></tr><tr><td>Воскресенье</td><td><ul><li>10:00</li><li>11:00</li><li>12:00</li><li>13:00</li><li>14:00</li><li>15:00</li><li>16:00</li><li>17:00</li></ul></td></tr>                </tbody>
+            </table>
+        </div>
+
+    </div>
+</section>
 <section>
     <div class="container">
         <div class="text-box">
