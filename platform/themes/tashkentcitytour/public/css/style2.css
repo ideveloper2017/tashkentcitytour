@@ -537,7 +537,7 @@ header .header-bottom .nav li a img {
 }
 .section-calc,
 .section-gray {
-  background: #f3f3f3 url(../images/bg/bg-calc.jpg) repeat;
+  background: #f3f3f3 url(../images/bg-calc.jpg) repeat;
   min-height: 300px;
   border-top: 1px solid #d4d4d4;
   border-bottom: 1px solid #d4d4d4;
@@ -940,7 +940,7 @@ header .header-bottom .nav li a img {
   font-size: 20px;
 }
 .section-best-views {
-  background: #dd353b url(../images/bg/bg-best.jpg);
+  background: #dd353b url(../images/bg-best.jpg);
 }
 .section-best-views .page-header * {
   color: #fff;
@@ -961,7 +961,7 @@ header .header-bottom .nav li a img {
   height: 260px;
 }
 .section-audit {
-  background: #ffffff url(../images/bg/bg-audit.jpg) no-repeat center top;
+  background: #ffffff url(../images/bg-audit.jpg) no-repeat center top;
   background-size: auto 100%;
   min-height: 415px;
 }
