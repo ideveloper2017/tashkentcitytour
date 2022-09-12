@@ -11,6 +11,15 @@
                         <img src="/images/img/click.jpg" alt="Click" class="hidden-xs" />
                     </div>
                 </div>
+                <div class="col-xs-6 col-md-5 col-md-offset-1">
+                    <div class="radio">
+                        <label class="radio-custom" data-initialize="radio">
+                            <input class="sr-only" name="pay" id="pay-payme" type="radio" value="opt3" data-toggle="#pay-method-payme">
+                            {{ __('Payment through') }}<span class="visible-xs-inline">Click</span>
+                        </label>
+                        <img src="/images/img/click.jpg" alt="Click" class="hidden-xs" />
+                    </div>
+                </div>
                 <div class="col-xs-6 col-md-5 col-mda-offset-1">
                     <div class="radio">
                         <label class="radio-custom" data-initialize="radio">
@@ -34,16 +43,16 @@
                 <td>Общая сумма</td>
             </tr>
             <tr>
-                <td><?= $order->id ?></td>
+                <td><{{ $order->id }}</td>
                 <td><?= date('d.m.Y H:i', strtotime($order->creation_date)) ?></td>
-                <td><span class="base-color"><?= number_format($order->total, 0, '.', ' ') ?> сум</span></td>
+                <td><span class="base-color">{{ number_format($order->total, 0, '.', ' ') }} сум</span></td>
             </tr>
             <tr>
                 <td colspan="3">
                     <strong>Вы выбрали способ оплаты: </strong>
                     Оплата через CLICK
                     <div class="pull-right">
-                        <?= $clickButton ?>
+                        {{ $clickButton }}
                     </div>
                 </td>
             </tr>
@@ -51,6 +60,35 @@
         </table>
     </div>
 </div>
+
+<div class="highlight-table hidden" id="pay-method-payme">
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <tbody>
+            <tr>
+                <td>№ заказа</td>
+                <td>Дата заказа</td>
+                <td>Общая сумма</td>
+            </tr>
+            <tr>
+                <td><{{ $order->id }}</td>
+                <td><?= date('d.m.Y H:i', strtotime($order->creation_date)) ?></td>
+                <td><span class="base-color">{{ number_format($order->total, 0, '.', ' ') }} сум</span></td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <strong>Вы выбрали способ оплаты: </strong>
+                    Оплата через CLICK
+                    <div class="pull-right">
+                        {{ $clickButton }}
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
 <div class="highlight hidden" id="pay-method-card">
     <div class="box">
         <div class="row margin-b">
@@ -93,7 +131,7 @@
                                 </div>
                                 <div class="col-xs-6 col-sm-5">
                                     <div class="number-input">
-                                        <input type="text" name="valid_y" class="form-control bfh-number"  data-max="<?= date('Y') + 10 ?>" data-min="<?= date('Y') ?>" />
+                                        <input type="text" name="valid_y" class="form-control bfh-number"  data-max="{{ date('Y') + 10 }}" data-min="{{ date('Y') }}" />
                                     </div>
                                 </div>
                             </div>
@@ -126,7 +164,7 @@
                     </div>
                 </div>
             </div>
-            <input type="hidden" name="orderId" value="<?= $order->id ?>">
+            <input type="hidden" name="orderId" value="{{ $order->id }}">
             </form>
 
         </div>

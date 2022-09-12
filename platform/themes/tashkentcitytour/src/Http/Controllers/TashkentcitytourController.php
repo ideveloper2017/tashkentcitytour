@@ -209,7 +209,27 @@ class TashkentcitytourController extends PublicController
 	<button type="submit" class="click_logo"><i></i>Оплатить через CLICK</button>
 </div>
 CODE;
-       echo (json_encode(array('success' => true, 'message' =>Theme::partial('ordertable',['settings'=>$settings,'order' => $order, 'clickButton' => $clickButton]))));
+
+        $clickPayme = <<<CODE
+<form action="https://my.click.uz/pay/" id="click_form" method="post" target="_blank">
+	<input id="click_amount_field" type="hidden" name="MERCHANT_TRANS_AMOUNT" value="$transAmount" class="click_input" />
+	<input type="hidden" name="MERCHANT_ID" value="$merchantID"/>
+	<input type="hidden" name="MERCHANT_USER_ID" value="$merchantUserID"/>
+	<input type="hidden" name="MERCHANT_SERVICE_ID" value="$serviceID"/>
+	<input type="hidden" name="MERCHANT_TRANS_ID" value="$transID"/>
+	<input type="hidden" name="MERCHANT_TRANS_NOTE" value="Билеты на посещение экскурсии по Ташкенту"/>
+	<input type="hidden" name="MERCHANT_USER_PHONE" value="$phone"/>
+	<input type="hidden" name="MERCHANT_USER_EMAIL" value="$userEmail"/>
+	<input type="hidden" name="SIGN_TIME" value="$date"/>
+	<input type="hidden" name="SIGN_STRING" value="$signString"/>
+	<input type="hidden" name="MERCHANT_TRANS_NOTE_BASE64" value="$encoded"/>
+	<button class="click_logo"><i></i>Оплатить через CLICK</button>
+</form>
+<div id="click_button" class="field" style="display: none;">
+	<button type="submit" class="click_logo"><i></i>Оплатить через CLICK</button>
+</div>
+CODE;
+       echo (json_encode(array('success' => true, 'message' =>Theme::partial('ordertable',['settings'=>$settings,'order' => $order, 'clickButton' => $clickButton,'clickPayme'=>$clickPayme]))));
     }
 
 
