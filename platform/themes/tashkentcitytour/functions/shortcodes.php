@@ -39,5 +39,10 @@ app()->booted(function () {
         return Theme::partial('shortcodes.homepage-about', ['title' => $shortCode->title]);
     });
 
+    if (is_plugin_active('contact')) {
+        add_filter(CONTACT_FORM_TEMPLATE_VIEW, function () {
+            return Theme::getThemeNamespace() . '::partials.shortcodes.contact-form';
+        }, 120);
+    }
 
 });
