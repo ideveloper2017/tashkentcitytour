@@ -22,7 +22,7 @@ $(document).ready(function () {
         var summ = 0;
         var dataprice = 0;
         var number = 0;
-       $('#hoponhopoff').attr('data-price', currencyUSD * 20);
+       //$('#hoponhopoff').attr('data-price', currencyUSD * 20);
 
         var index = 0;
         var places = [];
