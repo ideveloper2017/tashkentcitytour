@@ -49,9 +49,9 @@
                     <img src="img/contact-logo.png" alt="">
                     <ul>
                         <li>{!! theme_option('address') !!}</li>
-                        <li>+1 (603)535-4592</li>
-                        <li>hello@youremail.com</li>
-                        <li>Everyday: 06:00 -22:00</li>
+                        <li>{!! theme_option('phone') !!}</li>
+                        <li>{!! theme_option('email') !!}</li>
+                        <li>{!! theme_option('dayofweek') !!}</li>
                     </ul>
                     <div class="social-links">
                         <a href="#"><i class="fa fa-facebook"></i></a>
