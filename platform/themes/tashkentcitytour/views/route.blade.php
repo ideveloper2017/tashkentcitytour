@@ -7,8 +7,8 @@
      style="background-image: url({!! Theme::asset()->url('img/about_bg.jpg') !!});">
 </div>
 <section class="banners">
+    {!! do_shortcode('[google-map][/google-map]') !!}
 
-    [google-map][/google-map]
     <!--img src="/images/img/map-route.jpg" alt="Маршрут на карте" class="img-responsive hidden-xs"/-->
     <div class="visible-xs box"><a href="/images/img/map-route.jpg" class="base-color">Открыть карту с маршрутом</a></div>
 </section>
