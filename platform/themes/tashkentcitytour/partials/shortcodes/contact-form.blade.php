@@ -54,12 +54,19 @@
                         <li>{!! theme_option('dayofweek') !!}</li>
                     </ul>
                     <div class="social-links">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-instagram"></i></a>
-                        <a href="#"><i class="fa fa-linkedin"></i></a>
-                        <a href="#"><i class="fa fa-pinterest"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-youtube-play"></i></a>
+                        @foreach(json_decode(theme_option('social_links'), true) as $socialLink)
+                            @if (count($socialLink) == 3)
+                                <a href="{{ $socialLink[2]['value'] }}"
+                                   title="{{ $socialLink[0]['value'] }}" class="fa {{ $socialLink[1]['value'] }}" target="_blank">
+                                </a>
+                            @endif
+                        @endforeach
+{{--                        <a href="#"><i class="fa fa-facebook"></i></a>--}}
+{{--                        <a href="#"><i class="fa fa-instagram"></i></a>--}}
+{{--                        <a href="#"><i class="fa fa-linkedin"></i></a>--}}
+{{--                        <a href="#"><i class="fa fa-pinterest"></i></a>--}}
+{{--                        <a href="#"><i class="fa fa-twitter"></i></a>--}}
+{{--                        <a href="#"><i class="fa fa-youtube-play"></i></a>--}}
                     </div>
                 </div>
             </div>
