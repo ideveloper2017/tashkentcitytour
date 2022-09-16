@@ -8,8 +8,6 @@
 </div>
 <section class="banners">
     {!! do_shortcode('[google-map] г.Ташкент, ул. Тарраккиёт 45[/google-map]') !!}
-
-    <!--img src="/images/img/map-route.jpg" alt="Маршрут на карте" class="img-responsive hidden-xs"/-->
     <div class="visible-xs box"><a href="/images/img/map-route.jpg" class="base-color">Открыть карту с маршрутом</a></div>
 </section>
 <section class="page-header text-center text-uppercase">
