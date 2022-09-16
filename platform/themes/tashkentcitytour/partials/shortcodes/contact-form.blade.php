@@ -1,41 +1,50 @@
-<section class="call-back sec-pad">
+<section class="contact-section spad">
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-sm-12 col-xs-12 colmun">
-                <div class="call-back-content">
-                    <div class="call-back-title">
-                        <div class="section-title"><h2>Teskari  Aloqa</h2></div>
-                        <div class="title-text"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusm temp </p></div>
+            <div class="col-lg-12">
+                <div class="contact-title">
+                    <div class="section-title">
+                        <span>a memorable holliday</span>
+                        <h2>Located in the center of <br>Los Angeles</h2>
                     </div>
-                    <div class="form-area">
-                        <form action="#">
-                            <div class="row">
-                                <div class="col-md-6 col-sm-6 col-xs-12 colmun">
-                                    <input type="text" placeholder="Your Name">
-                                </div>
-                                <div class="col-md-6 col-sm-6 col-xs-12 colmun">
-                                    <input type="email" placeholder="Email">
-                                </div>
-                                <div class="col-md-6 col-sm-6 col-xs-12 colmun">
-                                    <input type="text" placeholder="Phone">
-                                </div>
-                                <div class="col-md-6 col-sm-6 col-xs-12 colmun">
-                                    <div class="select-box">
-                                        <i class="fa fa-angle-down"></i>
-                                        <select class="custom-select-box" id="ui-id-1" style="display: none;">
-                                            <option>Select a Topic</option>
-                                            <option>Project</option>
-                                            <option>Financial</option>
-                                            <option>Bima</option>
-                                            <option>Insurence</option>
-                                        </select><span tabindex="0" id="ui-id-1-button" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-owns="ui-id-1-menu" aria-haspopup="true" class="ui-selectmenu-button ui-button ui-widget ui-selectmenu-button-closed ui-corner-all" aria-activedescendant="ui-id-3" aria-labelledby="ui-id-2" aria-disabled="false"><span class="ui-selectmenu-icon ui-icon ui-icon-triangle-1-s"></span><span class="ui-selectmenu-text">Select a Topic</span></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="button">
-                                <button class="btn-one style-one radi">Send Request</button>
-                            </div>
-                        </form>
+                    <a href="#" class="primary-btn">Get Directions</a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8">
+                <form action="#" class="contact-form">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <input type="text" placeholder="Your name">
+                        </div>
+                        <div class="col-lg-6">
+                            <input type="email" placeholder="Your email">
+                        </div>
+                        <div class="col-lg-12">
+                            <input type="text" class="subject" placeholder="Subject">
+                            <textarea placeholder="Message"></textarea>
+                            <button type="submit">Send Message</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-4">
+                <div class="info-box">
+                    <img src="img/contact-logo.png" alt="">
+                    <ul>
+                        <li>1525 Madison Lane, <br>Los Angeles, CA</li>
+                        <li>+1 (603)535-4592</li>
+                        <li>hello@youremail.com</li>
+                        <li>Everyday: 06:00 -22:00</li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                        <a href="#"><i class="fa fa-pinterest"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-youtube-play"></i></a>
                     </div>
                 </div>
             </div>
