@@ -5,7 +5,7 @@
                 <div class="contact-title">
                     <div class="section-title">
                         <span>a memorable holliday</span>
-                        <h2>Located in the center of <br>Los Angeles</h2>
+                        <h2>{{ __('Contact Us For Any Questions') }}</h2>
                     </div>
                     <a href="#" class="primary-btn">Get Directions</a>
                 </div>
