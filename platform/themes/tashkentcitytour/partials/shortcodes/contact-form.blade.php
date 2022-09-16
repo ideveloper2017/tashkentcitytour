@@ -12,21 +12,37 @@
         </div>
         <div class="row">
             <div class="col-lg-8">
-                <form action="#" class="contact-form">
+                {!! Form::open(['route' => 'public.send.contact', 'class' => 'contact-form', 'method' => 'POST']) !!}
+
                     <div class="row">
                         <div class="col-lg-6">
-                            <input type="text" placeholder="Your name">
+                            <input type="text"  name="name" value="{{ old('name') }}" placeholder="{{ __('Name') }}">
                         </div>
                         <div class="col-lg-6">
-                            <input type="email" placeholder="Your email">
+                            <input type="email"name="email" value="{{ old('email') }}" placeholder="{{ __('Email') }}">
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="input-style mb-20">
+                                <input name="address" value="{{ old('address') }}" placeholder="{{ __('Address') }}" type="text">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="input-style mb-20">
+                                <input name="phone" value="{{ old('phone') }}" placeholder="{{ __('Phone') }}" type="tel">
+                            </div>
                         </div>
                         <div class="col-lg-12">
-                            <input type="text" class="subject" placeholder="Subject">
-                            <textarea placeholder="Message"></textarea>
-                            <button type="submit">Send Message</button>
+                            <input type="text" class="subject" name="subject" value="{{ old('subject') }}" placeholder="{{ __('Subject') }}">
+                            <textarea name="content" placeholder="{{ __('Message') }}">{{ old('content') }}</textarea>
+                            @if (setting('enable_captcha') && is_plugin_active('captcha'))
+                                <div class="col-md-12">
+                                    {!! Captcha::display() !!}
+                                </div>
+                            @endif
+                            <button type="submit">{{ __('Send message') }}</button>
                         </div>
                     </div>
-                </form>
+                {!! Form::close() !!}
             </div>
             <div class="col-lg-4">
                 <div class="info-box">
