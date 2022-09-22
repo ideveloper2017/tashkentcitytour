@@ -6,7 +6,7 @@
                     <div class="radio">
                         <label class="radio-custom" data-initialize="radio">
                             <input class="sr-only" name="pay" id="pay-click" type="radio" value="opt" data-toggle="#pay-method-click">
-                            {{ __('Payment through') }}<span class="visible-xs-inline">Click</span>
+                            {{ __('Оплата через') }}<span class="visible-xs-inline">Click</span>
                         </label>
                         <img src="/images/img/click.jpg" alt="Click" class="hidden-xs" />
                     </div>
@@ -15,7 +15,7 @@
                     <div class="radio">
                         <label class="radio-custom" data-initialize="radio">
                             <input class="sr-only" name="pay" id="pay-payme" type="radio" value="opt3" data-toggle="#pay-method-payme">
-                            {{ __('Payment through') }}<span class="visible-xs-inline">Payme</span>
+                            {{ __('Оплата через') }}<span class="visible-xs-inline">Payme</span>
                         </label>
                         <img src="/images/img/click.jpg" alt="Click" class="hidden-xs" />
                     </div>
