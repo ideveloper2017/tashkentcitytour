@@ -53,10 +53,7 @@
                                     <input name="totalChildren" type="text" class="form-control bfh-number" data-max="54" data-price="{{ $settings['ticketPrice']['children'] }}" value="0"  /></li>
                             </ul>
                         </div>
-
                     </div>
-
-
                     {{--                        <div class="check-form">--}}
                     {{--                             <div class="room-quantity">--}}
                     {{--                                    <div class="single-quantity">--}}
@@ -203,7 +200,7 @@
                                         <div class="result-block">
                                             <span>Итого:</span>
                                             <strong id="usdresult">0</strong>
-                                            <strong>&nbsp;$</strong>
+{{--                                            <strong>&nbsp;$</strong>--}}
                                         </div>
                                     </div>
                                     <div class="col-xs-6">
