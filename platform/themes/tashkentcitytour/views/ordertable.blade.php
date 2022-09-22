@@ -15,7 +15,7 @@
                     <div class="radio">
                         <label class="radio-custom" data-initialize="radio">
                             <input class="sr-only" name="pay" id="pay-payme" type="radio" value="opt3" data-toggle="#pay-method-payme">
-                            {{ __('Payment through') }}<span class="visible-xs-inline">Click</span>
+                            {{ __('Payment through') }}<span class="visible-xs-inline">Payme</span>
                         </label>
                         <img src="/images/img/click.jpg" alt="Click" class="hidden-xs" />
                     </div>
@@ -78,9 +78,9 @@
             <tr>
                 <td colspan="3">
                     <strong>Вы выбрали способ оплаты: </strong>
-                    Оплата через CLICK
+                    Оплата через Payme
                     <div class="pull-right">
-                        {{ $clickButton }}
+                        {{ $paymeButton }}
                     </div>
                 </td>
             </tr>
@@ -113,7 +113,6 @@
         </div>
         <div class="row">
             <form action="site/thank" method="post" id="payCardForm" onsubmit="payCard(); false;">
-
             <div class="col-sm-5 col-xs-12">
                 <div class="well">
                     <div class="form-horizontal">

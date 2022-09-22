@@ -210,7 +210,7 @@ class TashkentcitytourController extends PublicController
 </div>
 CODE;
 
-        $clickPayme = <<<CODE
+        $paymeButton = <<<CODE
 <form action="https://my.click.uz/pay/" id="click_form" method="post" target="_blank">
 	<input id="click_amount_field" type="hidden" name="MERCHANT_TRANS_AMOUNT" value="$transAmount" class="click_input" />
 	<input type="hidden" name="MERCHANT_ID" value="$merchantID"/>
@@ -229,7 +229,7 @@ CODE;
 	<button type="submit" class="click_logo"><i></i>Оплатить через CLICK</button>
 </div>
 CODE;
-       echo (json_encode(array('success' => true, 'message' =>Theme::partial('ordertable',['settings'=>$settings,'order' => $order, 'clickButton' => $clickButton,'clickPayme'=>$clickPayme]))));
+       echo (json_encode(array('success' => true, 'message' =>Theme::partial('ordertable',['settings'=>$settings,'order' => $order, 'clickButton' => $clickButton,'paymeButton'=>$paymeButton]))));
     }
 
     protected function createTicket($order, $type = 'adult', $date, $time, $place = 0) {
