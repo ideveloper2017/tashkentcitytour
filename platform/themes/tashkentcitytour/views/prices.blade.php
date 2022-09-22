@@ -198,8 +198,8 @@
                                 <div class="row">
                                     <div class="col-xs-6">
                                         <div class="result-block">
-                                            <span>Итого:</span>
-                                            <strong id="usdresult">0</strong>
+{{--                                            <span>Итого:</span>--}}
+{{--                                            <strong id="usdresult">0</strong>--}}
 {{--                                            <strong>&nbsp;$</strong>--}}
                                         </div>
                                     </div>
