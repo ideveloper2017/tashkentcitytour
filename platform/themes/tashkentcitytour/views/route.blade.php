@@ -7,7 +7,7 @@
 </section>
 <section class="page-header text-center text-uppercase">
     <div class="conteiner">
-        <h2>ЭКСКУРСИИ ПО ТАШКЕНТУ</h2>
+        <h2>МАРШРУТ ПО ЦЕНТРАЛЬНОЙ ЧАСТИ ТАШКЕНТА</h2>
     </div>
 </section>
 <section class="section-calc">

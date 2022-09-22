@@ -173,7 +173,7 @@ ol {
 	font-weight: 400;
 	padding: 18px 38px;
 	color: #ffffff;
-	background: #F9AD81;
+	background: #dc000c;
 	letter-spacing: 0.5px;
 }
 
@@ -367,7 +367,7 @@ ol {
 }
 
 .inner-header .main-menu ul li>a:hover {
-	color: #F9AD81;
+	color: #dc000c;
 }
 
 .inner-header .main-menu ul li>a:hover::after {
@@ -380,7 +380,7 @@ ol {
 	bottom: 9px;
 	width: 5px;
 	height: 5px;
-	background: #F9AD81;
+	background: #dc000c;
 	content: "";
 	border-radius: 50%;
 	-webkit-transform: translateX(-2.5px);
