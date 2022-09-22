@@ -1,7 +1,5 @@
 $(document).ready(function () {
 
-
-
     $('.checkbox input').checkbox('uncheck');
 
     $('.radio input').radio();
