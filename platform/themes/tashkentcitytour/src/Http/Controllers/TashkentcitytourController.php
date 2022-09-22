@@ -232,7 +232,6 @@ CODE;
        echo (json_encode(array('success' => true, 'message' =>Theme::partial('ordertable',['settings'=>$settings,'order' => $order, 'clickButton' => $clickButton,'clickPayme'=>$clickPayme]))));
     }
 
-
     protected function createTicket($order, $type = 'adult', $date, $time, $place = 0) {
 
         $reis = Reis::where(['date' => $date, 'time' => $time])->first();
@@ -295,7 +294,13 @@ CODE;
         return Theme::scope('tickets',compact('data'))->render();
     }
 
-    public function getRoutes(Request $request, BaseHttpResponse $response)
+    public function getRoutes(){
+        SeoHelper::setTitle('Videos');
+        Theme::breadcrumb()->add(__('Home'), url('/'))->add(__('Routes'));
+        return Theme::scope('route')->render();
+    }
+
+    public function getPrices(Request $request, BaseHttpResponse $response)
     {
         SeoHelper::setTitle('Videos');
         Theme::breadcrumb()->add(__('Home'), url('/'))->add(__('Routes'));
@@ -309,7 +314,7 @@ CODE;
         $settings = $data;
 //        $settings=$collect->get('1');
 //        dd($settings['ticketPrice']['adult']);
-        return Theme::scope('route', compact('settings'))->render();
+        return Theme::scope('prices', compact('settings'))->render();
     }
 
     public function getRoute(Request $request, BaseHttpResponse $response)
