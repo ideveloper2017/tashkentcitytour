@@ -15,8 +15,8 @@
                 <div class="footer-item">
                     <h5>Контактная информация</h5>
                     <ul>
-                        <li><img src="{!! Theme::asset()->url('img/placeholder.png') !!}" alt="">1525 Boring Lane,<br />Los Angeles, CA</li>
-                        <li><img src="{!! Theme::asset()->url('img/phone.png') !!}" alt="">+1 (603)535-4592</li>
+                        <li><img src="{!! Theme::asset()->url('img/placeholder.png') !!}" alt=""> {!! theme_option('address') !!}</li>
+                        <li><img src="{!! Theme::asset()->url('img/phone.png') !!}" alt="">{!! theme_option('phone') !!}</li>
                     </ul>
                 </div>
             </div>
