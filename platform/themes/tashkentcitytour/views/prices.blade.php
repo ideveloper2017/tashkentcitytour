@@ -197,10 +197,10 @@
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-xs-6">
-                                        <div class="result-block">
-{{--                                            <span>Итого:</span>--}}
-{{--                                            <strong id="usdresult">0</strong>--}}
-{{--                                            <strong>&nbsp;$</strong>--}}
+                                        <div class="result-block" style="display: none">
+                                            <span>Итого:</span>
+                                            <strong id="usdresult">0</strong>
+                                            <strong>&nbsp;$</strong>
                                         </div>
                                     </div>
                                     <div class="col-xs-6">
