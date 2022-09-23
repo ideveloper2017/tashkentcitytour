@@ -223,10 +223,10 @@ CODE;
 	<input type="hidden" name="SIGN_TIME" value="$date"/>
 	<input type="hidden" name="SIGN_STRING" value="$signString"/>
 	<input type="hidden" name="MERCHANT_TRANS_NOTE_BASE64" value="$encoded"/>
-	<button class="click_logo"><i></i>Оплатить через CLICK</button>
+	<button class="click_logo"><i></i>Оплатить через Payme</button>
 </form>
 <div id="click_button" class="field" style="display: none;">
-	<button type="submit" class="click_logo"><i></i>Оплатить через CLICK</button>
+	<button type="submit" class="click_logo"><i></i>Оплатить через Payme</button>
 </div>
 CODE;
        echo (json_encode(array('success' => true, 'message' =>Theme::partial('ordertable',['settings'=>$settings,'order' => $order, 'clickButton' => $clickButton,'paymeButton'=>$paymeButton]))));
@@ -383,10 +383,7 @@ CODE;
         }
     }
 
-
-
     public function thank(Request $request){
-
         $orderId = $request->post('orderId');
         $post = $request->post();
         $order = Order::find($orderId);

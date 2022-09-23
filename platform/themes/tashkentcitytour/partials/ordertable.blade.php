@@ -1,8 +1,8 @@
 <div class="highlight payment-panel">
     <div class="row">
-        <div class="col-sm-offset-2 col-sm-8 text-center">
+        <div class="col-sm-offset-1 col-sm-8 text-center">
             <div class="row">
-                <div class="col-xs-6 col-md-5 col-md-offset-1">
+                <div class="col-xs-4 col-md-5 col-md-offset-0">
                     <div class="radio">
                         <label class="radio-custom" data-initialize="radio">
                             <input class="sr-only" name="pay" id="pay-click" type="radio" value="opt" data-toggle="#pay-method-click">
@@ -11,7 +11,16 @@
                         <img src="{{ Theme::asset()->url('img/click.jpg') }}" alt="Click" class="hidden-xs" />
                     </div>
                 </div>
-                <div class="col-xs-6 col-md-5 col-mda-offset-1">
+                <div class="col-xs-4 col-md-5 col-md-offset-0">
+                    <div class="radio">
+                        <label class="radio-custom" data-initialize="radio">
+                            <input class="sr-only" name="pay" id="pay-payme" type="radio" value="opt3" data-toggle="#pay-method-payme">
+                            {{ __('Payment through') }}<span class="visible-xs-inline">Payme</span>
+                        </label>
+                        <img src="{{ Theme::asset()->url('images/payme_01.png') }}" alt="Click" class="hidden-xs" style="width: 77px; height: 35px;" />
+                    </div>
+                </div>
+                <div class="col-xs-4 col-md-5 col-mda-offset-0" style="display: none">
                     <div class="radio">
                         <label class="radio-custom" data-initialize="radio">
                             <input class="sr-only" name="pay" id="pay-card" type="radio" value="opt2" data-toggle="#pay-method-card">
@@ -44,6 +53,33 @@
                     Оплата через CLICK
                     <div class="pull-right">
                         {!!  $clickButton !!}
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="highlight-table hidden" id="pay-method-payme">
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <tbody>
+            <tr>
+                <td>№ заказа</td>
+                <td>Дата заказа</td>
+                <td>Общая сумма</td>
+            </tr>
+            <tr>
+                <td>{{ $order->id }} </td>
+                <td>{{ date('d.m.Y H:i', strtotime($order->order_date))  }} </td>
+                <td><span class="base-color">{{ number_format($order->total, 0, '.', ' ') }} сум</span></td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <strong>Вы выбрали способ оплаты: </strong>
+                    Оплата через Payme
+                    <div class="pull-right">
+                        {!!  $paymeButton !!}
                     </div>
                 </td>
             </tr>
